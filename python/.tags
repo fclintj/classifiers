@@ -1,0 +1,175 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Bhat	3_linear.py	/^Bhat = np.dot(np.linalg.inv(np.dot(X.T,X)),np.dot(X.T,Y))$/;"	v
+Bhat	4_quadratic.py	/^Bhat = np.linalg.lstsq(np.dot(X.T,X),np.dot(X.T,Y))[0]$/;"	v
+Bhat	classifiers.py	/^Bhat = np.linalg.lstsq(np.dot(X.T,X),np.dot(X.T,Y))[0]$/;"	v
+N	3_linear.py	/^N = N0 + N1$/;"	v
+N	4_quadratic.py	/^N = N0 + N1$/;"	v
+N	6_lda.py	/^N = N0 + N1$/;"	v
+N	7_qda.py	/^N = N0 + N1$/;"	v
+N	classifiers.py	/^N = N0 + N1$/;"	v
+N0	3_linear.py	/^N0 = x0.shape[1]$/;"	v
+N0	4_quadratic.py	/^N0 = x0.shape[1]$/;"	v
+N0	6_lda.py	/^N0 = x0.shape[1]$/;"	v
+N0	7_qda.py	/^N0 = x0.shape[1]$/;"	v
+N0	classifiers.py	/^N0 = x0.shape[1]$/;"	v
+N1	3_linear.py	/^N1 = x1.shape[1];$/;"	v
+N1	4_quadratic.py	/^N1 = x1.shape[1];$/;"	v
+N1	6_lda.py	/^N1 = x1.shape[1]$/;"	v
+N1	7_qda.py	/^N1 = x1.shape[1]$/;"	v
+N1	classifiers.py	/^N1 = x1.shape[1];$/;"	v
+Ntest0	3_linear.py	/^Ntest0 = 10000; $/;"	v
+Ntest0	4_quadratic.py	/^Ntest0 = 10000; $/;"	v
+Ntest0	6_lda.py	/^Ntest0 = 10000; $/;"	v
+Ntest0	7_qda.py	/^Ntest0 = 10000; $/;"	v
+Ntest0	classifiers.py	/^Ntest0 = 5000; $/;"	v
+Ntest1	3_linear.py	/^Ntest1 = 10000;$/;"	v
+Ntest1	4_quadratic.py	/^Ntest1 = 10000;$/;"	v
+Ntest1	6_lda.py	/^Ntest1 = 10000;$/;"	v
+Ntest1	7_qda.py	/^Ntest1 = 10000;$/;"	v
+Ntest1	classifiers.py	/^Ntest1 = 5000;$/;"	v
+Rhat	6_lda.py	/^Rhat = getRhat(x0,x1)$/;"	v
+Rhat	7_qda.py	/^Rhat = getRhat(x0,x1)$/;"	v
+X	3_linear.py	/^X = np.r_[np.c_[np.ones((N0,1)),x0.T],$/;"	v
+X	4_quadratic.py	/^X = np.c_[np.ones((N,1)),data_tot.T,data_tot[0].T*data_tot[0].T, data_tot[0]*data_tot[1],data_tot[1]*data_tot[1]]$/;"	v
+X	classifiers.py	/^X = np.c_[np.ones((N,1)),data_tot.T,data_tot[0].T*data_tot[0].T, data_tot[0]*data_tot[1],data_tot[1]*data_tot[1]]$/;"	v
+Y	3_linear.py	/^Y = np.r_[np.c_[np.ones((N0,1)),np.zeros((N0,1))],$/;"	v
+Y	4_quadratic.py	/^Y = np.r_[np.c_[np.ones((N0,1)),np.zeros((N0,1))],$/;"	v
+Y	classifiers.py	/^Y = np.r_[np.c_[np.ones((N0,1)),np.zeros((N0,1))],$/;"	v
+Yhat	3_linear.py	/^Yhat = np.dot(X,Bhat)$/;"	v
+Yhat	4_quadratic.py	/^Yhat = np.dot(X,Bhat)$/;"	v
+Yhat	classifiers.py	/^Yhat = np.dot(X,Bhat)$/;"	v
+Yhathard	3_linear.py	/^Yhathard = Yhat > 0.5    $/;"	v
+Yhathard	4_quadratic.py	/^Yhathard = Yhat > 0.5    $/;"	v
+Yhathard	classifiers.py	/^Yhathard = Yhat > 0.5    $/;"	v
+calcDel	6_lda.py	/^def calcDel(data,Rhat,mu,N0,N):$/;"	f
+calcDelQDA	7_qda.py	/^def calcDelQDA(data,Rhat,mu,N0,N):$/;"	f
+data	3_linear.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	4_quadratic.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	6_lda.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	7_qda.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	classifiers.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data_tot	3_linear.py	/^data_tot = np.c_[x0,x1]$/;"	v
+data_tot	4_quadratic.py	/^data_tot = np.c_[x0,x1]$/;"	v
+data_tot	classifiers.py	/^data_tot = np.c_[x0,x1]$/;"	v
+del_l	6_lda.py	/^        del_l =  np.array($/;"	v
+del_l	7_qda.py	/^        del_l =  np.array($/;"	v
+err_rate_linregress_test	3_linear.py	/^err_rate_linregress_test = float(num_err) \/ (Ntest0 + Ntest1);$/;"	v
+err_rate_linregress_test	4_quadratic.py	/^err_rate_linregress_test = num_err \/ (Ntest0 + Ntest1);$/;"	v
+err_rate_linregress_test	classifiers.py	/^err_rate_linregress_test = num_err \/ (Ntest0 + Ntest1);$/;"	v
+err_rate_linregress_train	3_linear.py	/^err_rate_linregress_train = float(num_err) \/ N$/;"	v
+err_rate_linregress_train	4_quadratic.py	/^err_rate_linregress_train = num_err \/ N$/;"	v
+err_rate_linregress_train	classifiers.py	/^err_rate_linregress_train = num_err \/ N$/;"	v
+fig	4_quadratic.py	/^fig = plt.figure() # make handle to save plot $/;"	v
+fig	6_lda.py	/^fig = plt.figure() # make handle to save plot $/;"	v
+fig	7_qda.py	/^fig = plt.figure() # make handle to save plot $/;"	v
+fig	classifiers.py	/^fig = plt.figure() # make handle to save plot $/;"	v
+gendata2	3_linear.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	4_quadratic.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	6_lda.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	7_qda.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	classifiers.py	/^def gendata2(class_type,N):$/;"	f
+getDel	6_lda.py	/^def getDel(x0,x1,Rhat):$/;"	f
+getDel	7_qda.py	/^def getDel(x0,x1,Rhat):$/;"	f
+getRhat	6_lda.py	/^def getRhat(x0,x1):$/;"	f
+getRhat	7_qda.py	/^def getRhat(x0,x1):$/;"	f
+green_pts	3_linear.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
+green_pts	3_linear.py	/^green_pts= np.array([[],[]])$/;"	v
+green_pts	4_quadratic.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
+green_pts	4_quadratic.py	/^green_pts= np.array([[],[]])$/;"	v
+green_pts	6_lda.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
+green_pts	6_lda.py	/^green_pts= np.array([[],[]])$/;"	v
+green_pts	7_qda.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
+green_pts	7_qda.py	/^green_pts= np.array([[],[]])$/;"	v
+green_pts	classifiers.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
+green_pts	classifiers.py	/^green_pts= np.array([[],[]])$/;"	v
+linregres	classifiers.py	/^def linregres(x0,x1):$/;"	f
+mu	6_lda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
+mu	7_qda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
+num_err	3_linear.py	/^        num_err = num_err + 1;$/;"	v
+num_err	3_linear.py	/^num_err = 0;$/;"	v
+num_err	3_linear.py	/^num_err = sum(sum(abs(Yhathard - Y)))\/2$/;"	v
+num_err	4_quadratic.py	/^        num_err = num_err + 1;$/;"	v
+num_err	4_quadratic.py	/^num_err = 0;$/;"	v
+num_err	4_quadratic.py	/^num_err = sum(sum(abs(Yhathard - Y)))\/2$/;"	v
+num_err	classifiers.py	/^        num_err = num_err + 1;$/;"	v
+num_err	classifiers.py	/^num_err = 0;$/;"	v
+num_err	classifiers.py	/^num_err = sum(sum(abs(Yhathard - Y)))\/2$/;"	v
+plotData	3_linear.py	/^def plotData(x0,x1):$/;"	f
+red_pts	3_linear.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	3_linear.py	/^red_pts = np.array([[],[]])$/;"	v
+red_pts	4_quadratic.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	4_quadratic.py	/^red_pts = np.array([[],[]])$/;"	v
+red_pts	6_lda.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	6_lda.py	/^red_pts = np.array([[],[]])$/;"	v
+red_pts	7_qda.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	7_qda.py	/^red_pts = np.array([[],[]])$/;"	v
+red_pts	classifiers.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	classifiers.py	/^red_pts = np.array([[],[]])$/;"	v
+x0	3_linear.py	/^x0 = data[:,0:2].T$/;"	v
+x0	4_quadratic.py	/^x0 = data[:,0:2].T$/;"	v
+x0	6_lda.py	/^x0 = data[:,0:2].T$/;"	v
+x0	7_qda.py	/^x0 = data[:,0:2].T$/;"	v
+x0	classifiers.py	/^x0 = data[:,0:2].T$/;"	v
+x1	3_linear.py	/^x1 = data[:,2:4].T$/;"	v
+x1	4_quadratic.py	/^x1 = data[:,2:4].T$/;"	v
+x1	6_lda.py	/^x1 = data[:,2:4].T$/;"	v
+x1	7_qda.py	/^x1 = data[:,2:4].T$/;"	v
+x1	classifiers.py	/^x1 = data[:,2:4].T$/;"	v
+x_cor_lin	3_linear.py	/^x_cor_lin = [xlim[0],xlim[1]]$/;"	v
+x_cor_lin	classifiers.py	/^x_cor_lin = [xlim[0],xlim[1]]$/;"	v
+x_tot	3_linear.py	/^x_tot = np.r_[x0[0,:],x1[0,:]]$/;"	v
+x_tot	4_quadratic.py	/^x_tot = np.r_[x0[0,:],x1[0,:]]$/;"	v
+x_tot	6_lda.py	/^x_tot = np.r_[x0[0,:],x1[0,:]]$/;"	v
+x_tot	7_qda.py	/^x_tot = np.r_[x0[0,:],x1[0,:]]$/;"	v
+x_tot	classifiers.py	/^x_tot = np.r_[x0[0,:],x1[0,:]]$/;"	v
+xlim	3_linear.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
+xlim	4_quadratic.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
+xlim	6_lda.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
+xlim	7_qda.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
+xlim	classifiers.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
+xp1	3_linear.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
+xp1	4_quadratic.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
+xp1	6_lda.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
+xp1	7_qda.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
+xp1	classifiers.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
+xtest0	3_linear.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
+xtest0	4_quadratic.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
+xtest0	6_lda.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
+xtest0	7_qda.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
+xtest0	classifiers.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
+xtest1	3_linear.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
+xtest1	4_quadratic.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
+xtest1	6_lda.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
+xtest1	7_qda.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
+xtest1	classifiers.py	/^xtest1 = gendata2(0,Ntest1) $/;"	v
+y_cor_lin	3_linear.py	/^y_cor_lin = [$/;"	v
+y_cor_lin	classifiers.py	/^y_cor_lin = [$/;"	v
+y_tot	3_linear.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
+y_tot	4_quadratic.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
+y_tot	6_lda.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
+y_tot	7_qda.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
+y_tot	classifiers.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
+yhat	3_linear.py	/^        yhat = np.dot(np.r_[1,x,y],Bhat)$/;"	v
+yhat	3_linear.py	/^    yhat = np.dot(np.r_[1,xtest0[:,i]],Bhat)$/;"	v
+yhat	3_linear.py	/^    yhat = np.dot(np.r_[1,xtest1[:,i]],Bhat)$/;"	v
+yhat	4_quadratic.py	/^        yhat = np.dot(np.r_[1,x,y,x*x,x*y,y*y],Bhat)$/;"	v
+yhat	4_quadratic.py	/^    yhat = np.dot(np.r_[1,xtest0[:,i],xtest0[0,i]*xtest0[0,i], xtest0[0,i]*xtest0[1,i],xtest0[1,i]*xtest0[1,i]],Bhat)$/;"	v
+yhat	4_quadratic.py	/^    yhat = np.dot(np.r_[1,xtest1[:,i],xtest1[0,i]*xtest1[0,i], xtest1[0,i]*xtest1[1,i],xtest1[1,i]*xtest1[1,i]],Bhat)$/;"	v
+yhat	classifiers.py	/^        yhat = np.dot(np.r_[1,x,y],Bhat)$/;"	v
+yhat	classifiers.py	/^    yhat = np.dot(np.r_[1,xtest0[:,i]],Bhat)$/;"	v
+yhat	classifiers.py	/^    yhat = np.dot(np.r_[1,xtest1[:,i]],Bhat)$/;"	v
+ylim	3_linear.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
+ylim	4_quadratic.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
+ylim	6_lda.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
+ylim	7_qda.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
+ylim	classifiers.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
+yp1	3_linear.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
+yp1	4_quadratic.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
+yp1	6_lda.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
+yp1	7_qda.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
+yp1	classifiers.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v

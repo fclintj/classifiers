@@ -1,0 +1,399 @@
+\title { Data-Driven Classifiers }
+\author{ Clint Ferrin     }
+\date  { Mon Sep 25, 2017 }
+\def\class { Neural Networks: ECE 5930 }
+\documentclass{article}\makeatletter
+
+\newcommand{\main} {
+   % document setup
+   \pageSetup
+   \createTitlePage
+   \includeHeader
+   \createTableOfContents
+
+   % content
+   \overview
+   \linear
+   \quadratic
+   \lqAnalysis
+   \linLogisticRegression
+   \kNearest
+   \naiveBayes
+   \optimalBayes
+   \discussion
+}
+%  ┌────────────────────────┐
+%  │     Extra Packages     │
+%  └────────────────────────┘
+    \usepackage[utf8]{inputenc}	% allows new character options
+    \usepackage[a4paper]{geometry}   % Paper dimensions and margins
+    \usepackage{fancyhdr}   % include document header
+    \usepackage{amsmath}    % allows equations to be split
+    \usepackage{bm}         % use of bold characters in math mode
+    \usepackage{enumitem}   % create lists
+    \usepackage{graphicx}	% manage images and graphics
+    \usepackage{hyperref}	% creates hyper-link color options
+    \usepackage{cleveref}	% (\Cref) include "Figure" on \reff 
+    \usepackage{xparse}     % include high performing functions 
+    \usepackage{xstring}    % StrSubstitute replace character
+    \usepackage{floatrow}	% allows placement of figures [H]
+    \usepackage{url}    	% package for url links
+    \usepackage{titletoc}   % change Table of Contents settings
+    \usepackage{caption}    % removes figure from LoF: \caption[]{}
+    \usepackage{listings, lstautogobble} % includes ability to input code
+    \usepackage{color}
+    \usepackage{courier}
+    \usepackage{etoolbox}
+    
+    \definecolor{mygreen}{RGB}{28,172,0}	% custom defined colors
+    \definecolor{mylilas}{RGB}{170,55,241}
+    \definecolor{mymauve}{rgb}{0.58,0,0.82}
+    \lstset {
+        language=Python,
+        breaklines		= true,
+        keywordstyle    = \color{blue},
+        morekeywords    = [2]{1}, keywordstyle=[2]{\color{black}},
+        identifierstyle = \color{black},
+        stringstyle     = \color{mylilas},
+        commentstyle    = \color{mygreen},
+        numbers         = left,
+        numberstyle     = {\tiny \color{black}},	% size of the numbers
+        numbersep       = 6pt, 						% distance of numbers from text
+        emph            = [1]{as, for, end, break}, % bold for, end, break...
+        emphstyle 		= [1]\color{red}, 			% emphasis
+        basicstyle		= \footnotesize\ttfamily,	% set font to courier
+        frameround      = ffff,                     % TR, BR, BL, TL. t(round)|f(flat)
+        frame           = single,                   % single line all around
+        showstringspaces= false,                    % blank spaces appear as written
+        autogobble      = true
+    }
+
+%  ┌────────────────────────┐
+%  │   General Functions    │
+%  └────────────────────────┘
+    % function to create magnitude bars around a function
+    \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+    \DeclareDocumentCommand{\reff}{m} {
+        \edef\link{#1}
+        \hspace{-0.5em}\hyperref[\link]{\Cref*{\link}} \hspace{-0.65em}
+    }
+
+    \DeclareDocumentCommand{\newFigure}{m o o o} {
+        \edef\path{#1} \edef\figcaption{#2} \edef\size{#3}  
+        % add label to figure
+        \StrSubstitute{#1}{.pdf}{}[\temp]
+        \StrSubstitute{\temp}{.jpg}{}[\temp]
+        \StrSubstitute{\temp}{.png}{}[\temp]
+        \expandafter\StrSubstitute\expandafter{\temp}{-}{ }[\temp]
+        %\label{\temp} % label gets rid of type and -.
+        
+        
+        % add size if not present
+        \IfNoValueTF{#3} { % if 2 and 3 are NULL
+            \def\size{0.75}
+            }{}
+         
+        % add caption if not present
+        \IfNoValueTF{#2} { % if 2 and 3 are NULL
+            %\expandafter\StrSubstitute\expandafter{\temp}{-}{ }[\output]
+            \newcommand\helphere{\temp}
+            \StrBehind{\helphere}{/}[\figcaption]
+        }{}
+        
+        \begin{figure}[H]
+        \begin{center}
+        \includegraphics[width=\size\textwidth]{\path}
+        % I deleted the capitalize function because it wouldn't pass []
+        % \capitalisewords{}
+        \caption{\figcaption}
+        \label{#4} % label gets rid of type and -.
+        \end{center}
+        \end{figure} 
+    }
+
+%  ┌────────────────────────┐
+%  │   Content Functions    │
+%  └────────────────────────┘
+    \newcommand{\pageSetup} {
+
+        \let\Title\@title
+        \let\Date\@date
+        \let\Author\@author
+
+        % \patchcmd{\subsection}{\bfseries}{\normalsize}{}{}
+        % \patchcmd{\subsection}{0.5em}{-0.5em}{}{}
+        % \renewcommand{\thesubsection}{\normalsize\hspace{-1em}}
+        \renewcommand\subsection{\@startsection{subsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {-1.5ex \@plus -.2ex}% Formerly 1.5ex \@plus .2ex
+                                     {\normalfont\normalsize\bfseries}}        \renewcommand{\thesubsection}{\hspace{-1em}}
+        \renewcommand{\thesection}{\hspace{-1em}}
+        \renewcommand{\partname}{}
+        \renewcommand{\thepart}{}
+
+        \newgeometry{left=1in,bottom=1in,right=1in,top=1in} % page dims
+        \setlength\parindent{0pt}	% set no tab on new paragraphs
+        \parskip = \baselineskip	% set single skip after paragraphs
+        \setlist{nosep,after=\vspace{\baselineskip}} % remove space on list
+        }\hypersetup{				% hyper-links environment
+            colorlinks,
+            linkcolor	= {black},
+            citecolor	= {black},
+            urlcolor	= {black},
+            pdfborderstyle={/S/U/W 1}
+        }
+
+    \newcommand{\createTitlePage} {
+        \clearpage
+        \begin{center}
+            \thispagestyle{empty}
+            \huge{\Title} 
+
+            % line
+            \vspace{0.25em}
+            \line(1,0){250}\normalsize 
+
+            \vspace{5mm}
+            \class 
+
+            \vspace{2.5cm}
+                \begin{center}
+                \includegraphics[width=0.45\textwidth]{media/title.png}\par
+                    Figure: Linear Data Classifier
+                \end{center}
+            \vspace{2.5cm}
+
+            \Author \vspace{-1em}
+
+            Utah State University \vspace{-1em}
+
+            \Date           \vspace{-1em}
+
+            \pagenumbering{gobble} 
+            \newpage
+        \end{center}
+    }
+
+    \newcommand{\createTableOfContents} {
+        \pagenumbering{roman}
+        \clearpage
+        % \newdimen\punktik
+        % \def\cvak{\ifdim\punktik<6pt \global\punktik=3pt \else\global\punktik=3pt \fi}
+        % \def\tocdots{\cvak\leaders\hbox to10pt{\kern\punktik.\hss}\hfill}
+        % \titlecontents{section}[0em]{\vskip -1em}{}{\itshape}{\hfill\thecontentspage}
+        % \titlecontents{subsection}[1em]{\vskip -1em}{}{} {\tocdots\thecontentspage}
+        
+        \tableofcontents 
+
+        \clearpage
+        \renewcommand*\listfigurename{\normalsize{List of Figures}}
+        \listoffigures
+
+        \renewcommand*\listtablename{\normalsize{List of Tables}}
+        \listoftables
+
+        \newpage
+        \pagenumbering{arabic}
+    }
+
+    \newcommand{\includeHeader} {
+        \pagestyle{fancy}
+        \fancyhf{}
+        % \fancyhead[L]{Top Left}
+        \fancyhead[L]{\Title}
+        \fancyhead[R]{\nouppercase\leftmark}
+        % \fancyhead[R]{Top Right}
+        \renewcommand{\headrulewidth}{0.5pt}
+        %\fancyfoot[L]{Bottom Left}
+        \fancyfoot[C]{\thepage}
+        %\fancyfoot[R]{Bottom Right}
+        \renewcommand{\footrulewidth}{0.5pt}
+    }
+
+%  ┌────────────────────────┐
+%  │    Written Content     │
+%  └────────────────────────┘
+
+    \DeclareDocumentCommand{\overview}{} {
+        \section{Overview}
+    } 
+
+    \DeclareDocumentCommand{\linear}{} {
+        \section{Linear Regression}
+        \subsection{Problem 1:} Show that the $\beta$ that minimizes $RSS(\beta)$ is
+        $\beta  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{y}$.
+            
+
+        To prove the previous statement, we will multiply the polynomial out, and find where the derivative equals zero to find the minimized $\beta$.
+        
+
+        \begin{equation*}\begin{aligned}
+            (\bm{y} - \bm{X}\beta)^T (\bm{y} - \bm{X}\beta) = & 
+            \bm{y}^T\bm{y} - \bm{y}^T \bm{X} \beta-\bm{X}^T\beta^T\bm{y} + \bm{X}^T \beta^T \bm{X}\beta\\
+            = &\bm{X}^T \beta^T \bm{X}\beta - 2\bm{X}^T\beta^T\bm{y} + \bm{y}^T\bm{y}
+        \end{aligned}\end{equation*}
+        
+        To find the minimized $\beta$ we will now take the derivative and solve for $\beta$ at zero.
+
+        \begin{equation*}\begin{aligned}
+            \frac{d}{d\beta}\bm{X}^T \beta^T \bm{X}\beta - 2 \bm{X}^T\beta^T\bm{y}
+            + \bm{y}^T\bm{y} &=0\\
+            2\bm{X}^T \bm{X} \beta - 2\bm{X}^T \bm{y} &= 0\\
+            \bm{X}^T \bm{X} \beta &= \bm{X}^T\bm{y}\\
+        \end{aligned}\end{equation*}
+        \begin{equation}
+            \beta  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{y}
+        \end{equation}
+
+        \subsection{Problem 2:} Show that if the norm of $\norm{\bm{Y} - \bm{X\hat{B}}}^2$ is the Frobenius norm, then that the $\bm{\hat{B}}$ minimizing the same is determined by $ \bm{\hat{B}}  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{Y}$ 
+        
+        Given that the Frobenius Norm for real numbers is:
+        \begin{equation*}
+            \sqrt{Tr(\bm{AA}^T)} 
+        \end{equation*}
+
+        Then the Frobenius Norm of the problem statement is:
+        \begin{equation*}\begin{aligned}
+            \sqrt{Tr(\bm{Y}-\bm{X\hat{B}})(\bm{Y}-\bm{X\hat{B}})^T}&=
+            \sqrt{Tr(\bm{X}^T \bm{\hat{B}}^T \bm{X}\bm{\hat{B}} - 2\bm{X}^T\bm{\hat{B}}^T\bm{Y} + \bm{Y}^T\bm{Y})} 
+        \end{aligned}\end{equation*}
+        
+        To find the $\bm{\hat{B}}$ minimizing the problem statement, we will take the deriving with respect to $\bm{\hat{B}}$
+        \begin{equation*}\begin{aligned}
+            \frac{d}{d\bm{\hat{B}}} \sqrt{Tr(\bm{X}^T \bm{\hat{B}}^T \bm{X}\bm{\hat{B}} - 2\bm{X}^T\bm{\hat{B}}^T\bm{Y} + \bm{Y}^T\bm{Y})}^2 &= 0\\
+            2\bm{X}^T \bm{X} \bm{\hat{B}}- 2\bm{X}^T \bm{Y} &= 0\\
+            \bm{X}^T \bm{X} \bm{\hat{B}} &= \bm{X}^T\bm{Y}\\
+        \end{aligned}\end{equation*}
+        
+        \begin{equation}
+            \bm{\hat{B}}  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{Y}
+        \end{equation}
+
+        \newpage
+        \subsection{Problem 3:}
+        Re-write the function \texttt{gendat2.m} into Python.
+        Using the 100 points of training data in \texttt{classasgntrain1.dat}, write \texttt{PYTHON} code to train the coefficient matrix $\hat{\beta}$.
+
+        \lstinputlisting[language=Python]{../python/3_linear.py}
+        
+
+    } 
+
+    \DeclareDocumentCommand{\quadratic}{} {
+        \section{Quadratic Regression} 
+
+        \subsection{Problem 4:} For the data described in Problem 3, train the regression coefficient matrix $\hat{B}$. Determine the classification error rate on the training data and 10,000 points of test data (as before) and fill in the corresponding row of the results table. Plot the classification regions as before.
+        
+        \lstinputlisting[language=Python]{../python/4_quadratic.py}
+
+
+         \subsection{Problem 5:} Show that (2) is true. In particular, make sure you understand what is meant by “up to a constant which does not depend on the class"
+
+          \begin{equation*}
+              f_k(\bm{x}) = \frac{1}{(2\pi)^{d/2}|\hat{R}^{1/2}|}\text{exp}[-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)]
+          \end{equation*}
+        
+        Using Bayes rule, we can produce the following form. Note: When using Bayes Rule, constants exuding the random variable can be eliminated without affecting the results:
+
+        \begin{equation*}\begin{aligned}
+            \hat{\pi}_k|\hat{R}_k|^{-1/2}\text{exp}[-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)] \\
+        \end{aligned}\end{equation*}
+
+        Now taking the log of the equation gives us:
+        \begin{equation*}
+            \text{log}\hat{\pi}_k -\frac{1}{2}\text{log}|\hat{R}_k|-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)
+        \end{equation*}
+    }
+
+
+    \DeclareDocumentCommand{\lqAnalysis}{} {
+        \section{Linear and Quadratic Discriminant Analysis}
+    }
+
+    \DeclareDocumentCommand{\linLogisticRegression}{} {
+        \section{Linear Logistic Regression}
+        \subsection{Problem 8:} Using the probability model $P(Y=0|X=\bm{x})=\frac{1}{1+\text{exp}[-\beta^T\bm{x}]} $ , show that $l(\beta)$ can be written as
+        \begin{equation*}
+            l(\beta)=\sum_{i=1}^N y_i \beta^T\bm{x}_i - log(1+e^{\beta^T\bm{x}_i})
+        \end{equation*}
+
+        We begin with the equation:
+        \begin{equation*}\begin{aligned}
+            l(\beta) &= \sum_{i=1}^N y_i \text{ log }p(\bm{x}_i;\beta)
+            + (1 - y_i) \text{ log}(1-p(\bm{x}_i;\beta))\\
+            &= \sum_{i=1}^N y_i \text{ log}( \frac{1}{1+e^{-\beta^T\bm{x}_i}} )
+            + (1-y_i) \text{ log}(1 - \frac{1}{1+e^{-\beta^T\bm{x}_i}})\\
+            &= \sum_{i=1}^N -y_i \text{ log}( 1+e^{-\beta^T\bm{x}_i})
+            + (1-y_i) \text{ log}(\frac{1+e^{-\beta^T\bm{x}_i}}{1+e^{-\beta^T\bm{x}_i}} - \frac{1}{1+e^{-\beta^T\bm{x}_i}})\\
+            &= \sum_{i=1}^N -y_i \text{ log}( 1+e^{-\beta^T\bm{x}_i})
+            + (1-y_i) \text{ log}(\frac{e^{-\beta^T\bm{x}_i}}{1+e^{-\beta^T\bm{x}_i}})\\
+            &= \sum_{i=1}^N -y_i \text{ log}( 1+e^{-\beta^T\bm{x}_i})
+            + (1-y_i) (\text{log}(e^{-\beta^T\bm{x}_i})-\text{log}({1+e^{-\beta^T\bm{x}_i}}))\\
+            &= \sum_{i=1}^N -y_i \text{ log}( 1 + e^{-\beta^T\bm{x}_i})
+            + (1-y_i) (-\beta^T\bm{x}_i - \text{log}({1+e^{-\beta^T\bm{x}_i}}))\\
+            &= \sum_{i=1}^N -y_i \text{ log}( 1 + e^{-\beta^T\bm{x}_i})
+            -\beta^T\bm{x}_i - \text{log}({1+e^{-\beta^T\bm{x}_i}})
+            + y_i\beta^T\bm{x}_i + y_i \text{ log}( 1 + e^{-\beta^T\bm{x}_i})\\
+            + y_i\beta^T\bm{x}_i + y_i \text{ log}( 1 + e^{\beta^T\bm{x}_i})\\
+            &= \sum_{i=1}^N y_i\beta^T\bm{x}_i - \text{log}({1+e^{\beta^T\bm{x}_i}}))\\
+        \end{aligned}\end{equation*}
+
+        \subsection{Problem 9:} Show that 
+        \begin{equation*}
+            \frac{\partial l(\beta)}{\partial \beta} = \sum_{i=1}^N\bm{x}_i (y_i - p(\bm{x}_i;\beta) )
+        \end{equation*}
+
+        Starting with the equation from the previous problem.
+
+        \begin{equation*}\begin{aligned}
+            \frac{\partial}{\partial \beta} &\sum_{i=1}^N y_i\beta^T\bm{x}_i - \text{log}({1+e^{\beta^T\bm{x}_i}})\\
+             &\sum_{i=1}^N y_i\bm{x}_i - \frac{\partial}{\partial \beta}\text{log}({1+e^{\beta^T\bm{x}_i}})\\
+             &\sum_{i=1}^N y_i\bm{x}_i - \frac{\bm{x}_i e^{\beta^T\bm{x}_i}}{1+e^{\beta^T\bm{x}_i}}\\
+             &\sum_{i=1}^N y_i\bm{x}_i - \frac{\bm{x}_i e^{\beta^T\bm{x}_i}}
+             {1+e^{\beta^T\bm{x}_i}}\\
+             &\sum_{i=1}^N y_i\bm{x}_i - \bm{x}_i p(\bm{x}_i;\beta)\\
+             &\sum_{i=1}^N \bm{x}_i (y_i - p(\bm{x}_i;\beta) )
+        \end{aligned}\end{equation*}
+
+        \subsection{Problem 10:} Show that 
+        \begin{equation*}
+            \frac{\partial^2 l(\beta)}{\partial \beta \partial \beta^T} = \sum_{i=1}^N \bm{x}_i\bm{x}_i^T
+            p(\bm{x}_i;\beta)(1-p(\bm{x}_i;\beta))
+        \end{equation*}
+
+        Beginning with the first derivative from the previous problem:
+        \begin{equation*}\begin{aligned}
+            \frac{\partial}{\partial \beta} &\sum_{i=1}^N 
+            \bm{x}_i (y_i - p(\bm{x}_i;\beta))\\
+            &\sum_{i=1}^N 
+            -\frac{\partial}{\partial\beta} \bm{x}_i p(\bm{x}_i;\beta))\\
+            &\sum_{i=1}^N 
+            -\bm{x}_i \frac{\partial}{\partial\beta}
+            \frac{1}{1+e^{-\beta^T\bm{x}_i}} \\
+            &\sum_{i=1}^N 
+            {(1+e^{-\beta^T\bm{x}_i})}
+            {(1+e^{-\beta^T\bm{x}_i})^2}
+        \end{aligned}\end{equation*}
+         
+    }
+
+    \DeclareDocumentCommand{\kNearest}{} {
+        \section{k-nearest Neighbor Classifier}
+    }
+
+    \DeclareDocumentCommand{\naiveBayes}{} {
+        \section{Naive Bayes Classifier}
+    }
+
+    \DeclareDocumentCommand{\optimalBayes}{} {
+        \section{Optimal Bayes Classifier}
+    }
+
+    \DeclareDocumentCommand{\discussion}{} {
+        \section{Discussion}
+    }
+
+\begin{document}
+    \main
+\end{document}

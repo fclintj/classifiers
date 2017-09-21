@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {\hspace {-1em}}Overview}{1}{section.1}
+\contentsline {section}{\numberline {\hspace {-1em}}Linear Regression}{1}{section.2}
+\contentsline {subsubsection}{Problem 1:}{1}{section*.4}
+\contentsline {subsubsection}{Problem 2:}{1}{section*.5}
+\contentsline {subsubsection}{Problem 3:}{2}{section*.6}
+\contentsline {section}{\numberline {\hspace {-1em}}Quadratic Regression}{3}{section.3}
+\contentsline {subsubsection}{Problem 4:}{3}{section*.7}
+\contentsline {subsubsection}{Problem 5:}{5}{section*.8}
+\contentsline {section}{\numberline {\hspace {-1em}}Linear and Quadratic Discriminant Analysis}{5}{section.4}
+\contentsline {section}{\numberline {\hspace {-1em}}Linear Logistic Regression}{5}{section.5}
+\contentsline {subsubsection}{Problem 8:}{5}{section*.9}
+\contentsline {subsubsection}{Problem 9:}{6}{section*.10}
+\contentsline {subsubsection}{Problem 10:}{6}{section*.11}
+\contentsline {section}{\numberline {\hspace {-1em}}k-nearest Neighbor Classifier}{7}{section.6}
+\contentsline {section}{\numberline {\hspace {-1em}}Naive Bayes Classifier}{7}{section.7}
+\contentsline {section}{\numberline {\hspace {-1em}}Optimal Bayes Classifier}{7}{section.8}
+\contentsline {section}{\numberline {\hspace {-1em}}Discussion}{7}{section.9}
+\contentsfinish 

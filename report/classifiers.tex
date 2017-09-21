@@ -318,6 +318,11 @@
             l(\beta)=\sum_{i=1}^N y_i \beta^T\bm{x}_i - log(1+e^{\beta^T\bm{x}_i})
         \end{equation*}
 
+        Note:
+        \begin{equation*}
+            \frac{e^{\beta^T\bm{x}_i}}{1 + e^{\beta^T\bm{x}_i}} 
+            = \frac{1}{1 + e^{-\beta^T\bm{x}_i}} 
+        \end{equation*}
         We begin with the equation:
         \begin{equation*}\begin{aligned}
             l(\beta) &= \sum_{i=1}^N y_i \text{ log }p(\bm{x}_i;\beta)
@@ -335,7 +340,15 @@
             &= \sum_{i=1}^N -y_i \text{ log}( 1 + e^{-\beta^T\bm{x}_i})
             -\beta^T\bm{x}_i - \text{log}({1+e^{-\beta^T\bm{x}_i}})
             + y_i\beta^T\bm{x}_i + y_i \text{ log}( 1 + e^{-\beta^T\bm{x}_i})\\
-            + y_i\beta^T\bm{x}_i + y_i \text{ log}( 1 + e^{\beta^T\bm{x}_i})\\
+            &= \sum_{i=1}^N 
+            y_i\beta^T\bm{x}_i
+            -\beta^T\bm{x}_i - \text{log}({1+e^{-\beta^T\bm{x}_i}})\\
+            &= \sum_{i=1}^N 
+            y_i\beta^T\bm{x}_i
+            -(\beta^T\bm{x}_i + \text{log}({1+e^{-\beta^T\bm{x}_i}}))\\
+            &= \sum_{i=1}^N 
+            y_i\beta^T\bm{x}_i
+            -(\text{log}(e^{\beta^T\bm{x}_i}) + \text{log}({1+e^{-\beta^T\bm{x}_i}}))\\
             &= \sum_{i=1}^N y_i\beta^T\bm{x}_i - \text{log}({1+e^{\beta^T\bm{x}_i}}))\\
         \end{aligned}\end{equation*}
 

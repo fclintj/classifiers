@@ -383,10 +383,31 @@
             -\frac{\partial}{\partial\beta} \bm{x}_i p(\bm{x}_i;\beta))\\
             &\sum_{i=1}^N 
             -\bm{x}_i \frac{\partial}{\partial\beta}
-            \frac{1}{1+e^{-\beta^T\bm{x}_i}} \\
+            \frac{1}{1+e^{\beta^T\bm{x}_i}} \\
             &\sum_{i=1}^N 
-            {(1+e^{-\beta^T\bm{x}_i})}
-            {(1+e^{-\beta^T\bm{x}_i})^2}
+            \frac{-\bm{x}_i e^{\beta^T\bm{x}_i}x^T}
+            {(1+e^{\beta^T\bm{x}_i})^2}\\
+            &\sum_{i=1}^N 
+            \frac{-\bm{x}_i e^{\beta^T\bm{x}_i}x^T}
+            {(1+e^{\beta^T\bm{x}_i})^2}\\
+        \end{aligned}\end{equation*}
+        
+        Note:
+        \begin{equation*}\begin{aligned}
+            1 - p(\bm{x}_i;\beta) 
+            &= \frac{1 + e^{\beta^T\bm{x}_i}}{1 + e^{\beta^T\bm{x}_i}}
+            - \frac{1}{1 + e^{\beta^T\bm{x}_i}}\\
+            &= \frac{e^{\beta^T\bm{x}_i}}{1 + e^{\beta^T\bm{x}_i}}
+        \end{aligned}\end{equation*}
+
+        So,
+        \begin{equation*}\begin{aligned}
+            \sum_{i=1}^N 
+            \frac{-\bm{x}_i e^{\beta^T\bm{x}_i}x^T}
+            {(1+e^{\beta^T\bm{x}_i})^2} &= 
+            \frac{-\bm{x}_i^T\bm{x}(1 - p(\bm{x}_i;\beta))} 
+            {1+e^{\beta^T\bm{x}_i}}\\
+            &=-\bm{x}_i^T\bm{x}\: p(\bm{x}_i;\beta) (1 - p(\bm{x}_i;\beta))
         \end{aligned}\end{equation*}
          
     }

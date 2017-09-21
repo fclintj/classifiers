@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6400) (preloaded format=xelatex 2017.8.7)  21 SEP 2017 10:53
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6400) (preloaded format=xelatex 2017.8.7)  21 SEP 2017 11:12
 entering extended mode
 **./classifiers.tex
 (classifiers.tex
@@ -585,49 +585,49 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 145.
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \linLogisticRegression with sig. '' on line 392.
+. Defining command \linLogisticRegression with sig. '' on line 413.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \kNearest with sig. '' on line 396.
+. Defining command \kNearest with sig. '' on line 417.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \naiveBayes with sig. '' on line 400.
+. Defining command \naiveBayes with sig. '' on line 421.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \optimalBayes with sig. '' on line 404.
+. Defining command \optimalBayes with sig. '' on line 425.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \discussion with sig. '' on line 408.
+. Defining command \discussion with sig. '' on line 429.
 .................................................
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.aux")
 \openout1 = `classifiers.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 410.
-LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 431.
+LaTeX Font Info:    ... okay on input line 431.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -663,7 +663,7 @@ LaTeX Font Info:    ... okay on input line 410.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 410.
+Package hyperref Info: Link coloring ON on input line 431.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -672,9 +672,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count162
 )
-LaTeX Info: Redefining \ref on input line 410.
-LaTeX Info: Redefining \pageref on input line 410.
-LaTeX Info: Redefining \nameref on input line 410.
+LaTeX Info: Redefining \ref on input line 431.
+LaTeX Info: Redefining \pageref on input line 431.
+LaTeX Info: Redefining \nameref on input line 431.
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.out")
@@ -755,48 +755,48 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 411.
+(hyperref)                than one, level fixed on input line 432.
 
 [1]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 411.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 432.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 411.
+nput line 432.
 
 (../python/3_linear.py [2])
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 411.
+(hyperref)                than one, level fixed on input line 432.
 
 (../python/4_quadratic.py [3] [4])
 Missing character: There is no “ in font cmr10!
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 411.
+(hyperref)                than one, level fixed on input line 432.
 
 [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 412.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 412.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
+ [7] [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.aux")
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 412.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 412.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 412.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 433.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 433.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
  ) 
 Here is how much of TeX's memory you used:
  21580 strings out of 430306
  358557 string characters out of 3188937
- 629415 words of memory out of 3000000
+ 629875 words of memory out of 3000000
  24726 multiletter control sequences out of 15000+200000
  8846 words of font info for 32 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,12n,45p,10425b,1908s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on /mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes
-/Neural Networks/dev/classifiers/report/build/classifiers.pdf (10 pages).
+/Neural Networks/dev/classifiers/report/build/classifiers.pdf (11 pages).

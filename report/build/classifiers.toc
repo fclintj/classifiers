@@ -11,8 +11,8 @@
 \contentsline {subsubsection}{Problem 8:}{5}{section*.9}
 \contentsline {subsubsection}{Problem 9:}{6}{section*.10}
 \contentsline {subsubsection}{Problem 10:}{7}{section*.11}
-\contentsline {section}{\numberline {\hspace {-1em}}k-nearest Neighbor Classifier}{7}{section.6}
-\contentsline {section}{\numberline {\hspace {-1em}}Naive Bayes Classifier}{7}{section.7}
-\contentsline {section}{\numberline {\hspace {-1em}}Optimal Bayes Classifier}{7}{section.8}
-\contentsline {section}{\numberline {\hspace {-1em}}Discussion}{7}{section.9}
+\contentsline {section}{\numberline {\hspace {-1em}}k-nearest Neighbor Classifier}{8}{section.6}
+\contentsline {section}{\numberline {\hspace {-1em}}Naive Bayes Classifier}{8}{section.7}
+\contentsline {section}{\numberline {\hspace {-1em}}Optimal Bayes Classifier}{8}{section.8}
+\contentsline {section}{\numberline {\hspace {-1em}}Discussion}{8}{section.9}
 \contentsfinish 

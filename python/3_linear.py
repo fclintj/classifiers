@@ -77,7 +77,7 @@ for i in range(Ntest0):
 
 for i in range(Ntest1):
     yhat = np.dot(np.r_[1,xtest1[:,i]],Bhat)
-    if yhat[1] > yhat[0]: 
+    if yhat[1] < yhat[0]: 
         num_err = num_err + 1;
 
 print("Number of errors: %d"%(num_err))

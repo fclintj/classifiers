@@ -59,8 +59,8 @@ print("Number of errors: %d"%(num_err))
 Ntest0 = 10000; 
 Ntest1 = 10000;
 
-err_rate_linregress_train = num_err / N
-
+err_rate_linregress_train = float(num_err) / N
+print(err_rate_linregress_train)
 # generate the test data for class O
 xtest0 = gendata2(0,Ntest0)
 xtest1 = gendata2(1,Ntest1) 
@@ -73,12 +73,13 @@ for i in range(Ntest0):
 
 for i in range(Ntest1):
     yhat = np.dot(np.r_[1,xtest1[:,i],xtest1[0,i]*xtest1[0,i], xtest1[0,i]*xtest1[1,i],xtest1[1,i]*xtest1[1,i]],Bhat)
-    if yhat[1] > yhat[0]: 
+    if yhat[1] < yhat[0]: 
         num_err = num_err + 1;
 
 print("Number of errors: %d"%(num_err))
 
-err_rate_linregress_test = num_err / (Ntest0 + Ntest1);
+err_rate_linregress_test = float(num_err) / (Ntest0 + Ntest1);
+print(err_rate_linregress_test)
 
 
 # find max and min of sets

@@ -63,7 +63,7 @@ def find_class(dist_mat,k):
 
 data = np.loadtxt("../data/classasgntrain1.dat",dtype=float)
 data = data_frame(data)
-k = 15
+k = 1
 y = np.r_[np.zeros([data.N0,1]),np.ones([data.N1,1])] 
 X = np.c_[data.xtot,y] 
 yhat = np.empty([data.N,1])

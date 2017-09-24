@@ -55,6 +55,7 @@ Yhathard	4_quadratic.py	/^Yhathard = Yhat > 0.5    $/;"	v
 Yhathard	classifiers.py	/^Yhathard = Yhat > 0.5    $/;"	v
 __init__	11_log_regression.py	/^    def __init__(self, data):$/;"	m	class:data_frame
 __init__	13_neighbor.py	/^    def __init__(self, data):$/;"	m	class:data_frame
+__init__	15_naive_bayes_applied.py	/^    def __init__(self, data):$/;"	m	class:data_frame
 beta	11_log_regression.py	/^    beta = beta + np.dot(np.dot(np.linalg.inv(np.dot(X.T,Xhat)),X.T),(y-phat))$/;"	v
 beta	11_log_regression.py	/^beta = np.zeros([3,1])$/;"	v
 blue_pts	13_neighbor.py	/^            blue_pts = np.c_[blue_pts,[x,y]]$/;"	v
@@ -68,6 +69,8 @@ data	11_log_regression.py	/^data = data_frame(data)$/;"	v
 data	11_log_regression.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	13_neighbor.py	/^data = data_frame(data)$/;"	v
 data	13_neighbor.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	15_naive_bayes_applied.py	/^data = data_frame(data)$/;"	v
+data	15_naive_bayes_applied.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	3_linear.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	4_quadratic.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	6_lda.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
@@ -75,6 +78,7 @@ data	7_qda.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/
 data	classifiers.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data_frame	11_log_regression.py	/^class data_frame:$/;"	c
 data_frame	13_neighbor.py	/^class data_frame:$/;"	c
+data_frame	15_naive_bayes_applied.py	/^class data_frame:$/;"	c
 data_tot	3_linear.py	/^data_tot = np.c_[x0,x1]$/;"	v
 data_tot	4_quadratic.py	/^data_tot = np.c_[x0,x1]$/;"	v
 data_tot	classifiers.py	/^data_tot = np.c_[x0,x1]$/;"	v
@@ -89,10 +93,10 @@ emperical	14_naive_bayes.py	/^emperical = np.sort(emperical,axis=None)$/;"	v
 err_rate_linregress_test	11_log_regression.py	/^err_rate_linregress_test = float(num_err) \/ (Ntest0 + Ntest1);$/;"	v
 err_rate_linregress_test	13_neighbor.py	/^err_rate_linregress_test = float(num_err) \/ (Ntest0 + Ntest1);$/;"	v
 err_rate_linregress_test	3_linear.py	/^err_rate_linregress_test = float(num_err) \/ (Ntest0 + Ntest1);$/;"	v
-err_rate_linregress_test	4_quadratic.py	/^err_rate_linregress_test = num_err \/ (Ntest0 + Ntest1);$/;"	v
+err_rate_linregress_test	4_quadratic.py	/^err_rate_linregress_test = float(num_err) \/ (Ntest0 + Ntest1);$/;"	v
 err_rate_linregress_test	classifiers.py	/^err_rate_linregress_test = num_err \/ (Ntest0 + Ntest1);$/;"	v
 err_rate_linregress_train	3_linear.py	/^err_rate_linregress_train = float(num_err) \/ N$/;"	v
-err_rate_linregress_train	4_quadratic.py	/^err_rate_linregress_train = num_err \/ N$/;"	v
+err_rate_linregress_train	4_quadratic.py	/^err_rate_linregress_train = float(num_err) \/ N$/;"	v
 err_rate_linregress_train	classifiers.py	/^err_rate_linregress_train = num_err \/ N$/;"	v
 fig	4_quadratic.py	/^fig = plt.figure() # make handle to save plot $/;"	v
 fig	6_lda.py	/^fig = plt.figure() # make handle to save plot $/;"	v
@@ -101,6 +105,7 @@ fig	classifiers.py	/^fig = plt.figure() # make handle to save plot $/;"	v
 find_class	13_neighbor.py	/^def find_class(dist_mat,k):$/;"	f
 gendata2	11_log_regression.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	13_neighbor.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	15_naive_bayes_applied.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	3_linear.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	4_quadratic.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	6_lda.py	/^def gendata2(class_type,N):$/;"	f
@@ -108,6 +113,7 @@ gendata2	7_qda.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	classifiers.py	/^def gendata2(class_type,N):$/;"	f
 getDel	6_lda.py	/^def getDel(x0,x1,Rhat):$/;"	f
 getDel	7_qda.py	/^def getDel(x0,x1,Rhat):$/;"	f
+getParzen	15_naive_bayes_applied.py	/^def getParzen(data,pts,lam):$/;"	f
 getRhat	6_lda.py	/^def getRhat(x0,x1):$/;"	f
 getRhat	7_qda.py	/^def getRhat(x0,x1):$/;"	f
 get_distance_matrix	13_neighbor.py	/^def get_distance_matrix(X,point):$/;"	f
@@ -124,9 +130,10 @@ green_pts	7_qda.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	7_qda.py	/^green_pts= np.array([[],[]])$/;"	v
 green_pts	classifiers.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	classifiers.py	/^green_pts= np.array([[],[]])$/;"	v
-k	13_neighbor.py	/^k = 15$/;"	v
+k	13_neighbor.py	/^k = 1$/;"	v
 kernel	14_naive_bayes.py	/^kernel = np.empty([emperical.shape[0],pts])$/;"	v
 lam	14_naive_bayes.py	/^lam = 0.8$/;"	v
+lam	15_naive_bayes_applied.py	/^lam = 0.8$/;"	v
 linregres	classifiers.py	/^def linregres(x0,x1):$/;"	f
 mu	6_lda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
 mu	7_qda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
@@ -159,6 +166,7 @@ prob	11_log_regression.py	/^        prob = np.dot(beta.T,np.r_[1,x,y])$/;"	v
 prob	11_log_regression.py	/^    prob = np.dot(beta.T,np.r_[1,xtest0[:,i]]) $/;"	v
 prob	11_log_regression.py	/^    prob = np.dot(beta.T,np.r_[1,xtest1[:,i]]) $/;"	v
 pts	14_naive_bayes.py	/^pts = 100$/;"	v
+pts	15_naive_bayes_applied.py	/^pts = 100$/;"	v
 red_pts	11_log_regression.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	11_log_regression.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	13_neighbor.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v

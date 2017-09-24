@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Linear Regression	classifiers.tex	/^    \\DeclareDocumentCommand{\\linear}{} {$/;"	s
+Overview	classifiers.tex	/^    \\DeclareDocumentCommand{\\overview}{} {$/;"	s
+Problem 1 	classifiers.tex	/^        \\section{Linear Regression}$/;"	u
+Problem 2 	classifiers.tex	/^        \\end{equation}$/;"	u
+Problem 3 	classifiers.tex	/^        \\newpage$/;"	u
+Problem 4 	classifiers.tex	/^        \\section{Quadratic Regression} $/;"	u
+Problem 5 	classifiers.tex	/^        \\lstinputlisting[language=Python]{..\/python\/4_quadratic.py}$/;"	u
+Quadratic Regression	classifiers.tex	/^    \\DeclareDocumentCommand{\\quadratic}{} {$/;"	s
+Shape	test.py	/^class Shape:$/;"	c
+X	11_log_regression.py	/^X = np.r_[np.ones([1,data.xtot.shape[1]]), data.xtot].T $/;"	v
+Xhat	11_log_regression.py	/^    Xhat = X*phat$/;"	v
+__init__	11_log_regression.py	/^    def __init__(self, data):$/;"	m	class:data_frame
+__init__	test.py	/^    def __init__(self, x, y):$/;"	m	class:Shape
+area	test.py	/^    def area(self):$/;"	m	class:Shape
+authorName	test.py	/^    def authorName(self, text):$/;"	m	class:Shape
+beta	11_log_regression.py	/^    beta = beta + np.dot(np.dot(np.linalg.inv(np.dot(X.T,Xhat)),X.T),(y-phat))$/;"	v
+beta	11_log_regression.py	/^beta = np.zeros([3,1])$/;"	v
+data	11_log_regression.py	/^data = data_frame(data)$/;"	v
+data	11_log_regression.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data_frame	11_log_regression.py	/^class data_frame:$/;"	c
+describe	test.py	/^    def describe(self, text):$/;"	m	class:Shape
+get_phat	11_log_regression.py	/^def get_phat(data,X,beta):$/;"	f
+perimeter	test.py	/^    def perimeter(self):$/;"	m	class:Shape
+phat	11_log_regression.py	/^    phat = get_phat(data,X,beta)$/;"	v
+rectangle	test.py	/^rectangle = Shape(100, 45)$/;"	v
+scaleSize	test.py	/^    def scaleSize(self, scale):$/;"	m	class:Shape
+startsection  subsubsection	classifiers.tex	/^        \\renewcommand\\subsection{\\@startsection{subsubsection}{4}{\\z@}%$/;"	u
+y	11_log_regression.py	/^y = np.r_[np.ones([data.N0,1]),np.zeros([data.N1,1])] $/;"	v

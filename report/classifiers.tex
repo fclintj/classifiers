@@ -44,6 +44,9 @@
     \usepackage{color}
     \usepackage{courier}
     \usepackage{etoolbox}
+    \usepackage{tabulary}		% columns size of their contents (on page)
+    \usepackage{booktabs}   % allows for \toprule in tables
+    \newfloatcommand{capbtabbox}{table}[][\FBwidth] % puts table in a box
     
     \definecolor{mygreen}{RGB}{28,172,0}	% custom defined colors
     \definecolor{mylilas}{RGB}{170,55,241}
@@ -261,7 +264,7 @@
         
         To find the $\bm{\hat{B}}$ minimizing the problem statement, we will take the deriving with respect to $\bm{\hat{B}}$
         \begin{equation*}\begin{aligned}
-            \frac{d}{d\bm{\hat{B}}} \sqrt{Tr(\bm{X}^T \bm{\hat{B}}^T \bm{X}\bm{\hat{B}} - 2\bm{X}^T\bm{\hat{B}}^T\bm{Y} + \bm{Y}^T\bm{Y})}^2 &= 0\\
+            \frac{d}{d\bm{\hat{B}}} \norm{\sqrt{Tr(\bm{X}^T \bm{\hat{B}}^T \bm{X}\bm{\hat{B}} - 2\bm{X}^T\bm{\hat{B}}^T\bm{Y} + \bm{Y}^T\bm{Y})}}^2 &= 0\\
             2\bm{X}^T \bm{X} \bm{\hat{B}}- 2\bm{X}^T \bm{Y} &= 0\\
             \bm{X}^T \bm{X} \bm{\hat{B}} &= \bm{X}^T\bm{Y}\\
         \end{aligned}\end{equation*}
@@ -276,7 +279,24 @@
         Using the 100 points of training data in \texttt{classasgntrain1.dat}, write \texttt{PYTHON} code to train the coefficient matrix $\hat{\beta}$.
 
         \lstinputlisting[language=Python]{../python/3_linear.py}
-        
+
+
+        \begin{tabulary}{\linewidth}{rcc}	
+            & \multicolumn{2}{c}{Errors in \%}                        \\
+            \toprule % ---------------------------------------
+            Method				        &   Training   &  Test      \\ 
+            \toprule % ---------------------------------------
+            Linear Regression 		    &      14.0    &  20    \\
+            Quadratic Regression	    &      14.5    &  20    \\
+            Linear Discriminant Analysis&      15.0    &  20    \\
+            Quadratic Discriminant Analysis	&  14.5    &  20    \\
+            Logistic Regression     	&      14.0    &  20    \\
+            1-Nearest Neighbor	    	&      00.0    &  22    \\
+            5-Nearest Neighbor	    	&      12.0    &  20    \\
+            15-Nearest Neighbor         &      16.0    &  19    \\
+            Bayes Naive 	            &              &        \\
+            \bottomrule % ---------------------------------------
+        \end{tabulary}\label{} 
 
     } 
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6400) (preloaded format=xelatex 2017.8.7)  21 SEP 2017 11:12
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6400) (preloaded format=xelatex 2017.8.7)  24 SEP 2017 00:09
 entering extended mode
 **./classifiers.tex
 (classifiers.tex
@@ -548,86 +548,123 @@ Package: courier 2005/04/12 PSNFSS-v9.2a (WaS)
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count161
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
+Package: tabulary 2014/06/11 v0.10 tabulary package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen174
+\extrarowheight=\dimen175
+\NC@list=\toks28
+\extratabsurround=\skip77
+\backup@length=\skip78
+)
+\TY@count=\count162
+\TY@linewidth=\dimen176
+\tymin=\dimen177
+\tymax=\dimen178
+\TY@tablewidth=\dimen179
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen180
+\lightrulewidth=\dimen181
+\cmidrulewidth=\dimen182
+\belowrulesep=\dimen183
+\belowbottomsep=\dimen184
+\aboverulesep=\dimen185
+\abovetopsep=\dimen186
+\cmidrulesep=\dimen187
+\cmidrulekern=\dimen188
+\defaultaddspace=\dimen189
+\@cmidla=\count163
+\@cmidlb=\count164
+\@aboverulesep=\dimen190
+\@belowrulesep=\dimen191
+\@thisruleclass=\count165
+\@lastruleclass=\count166
+\@thisrulewidth=\dimen192
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \reff with sig. 'm' on line 80.
+. Defining command \reff with sig. 'm' on line 83.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \newFigure with sig. 'm o o o' on line 113.
+. Defining command \newFigure with sig. 'm o o o' on line 116.
 .................................................
-Package hyperref Info: Option `colorlinks' set `true' on input line 145.
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \overview with sig. '' on line 220.
-.................................................
+Package hyperref Info: Option `colorlinks' set `true' on input line 148.
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \linear with sig. '' on line 281.
+. Defining command \overview with sig. '' on line 223.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \quadratic with sig. '' on line 307.
+. Defining command \linear with sig. '' on line 301.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \lqAnalysis with sig. '' on line 312.
+. Defining command \quadratic with sig. '' on line 327.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \linLogisticRegression with sig. '' on line 413.
+. Defining command \lqAnalysis with sig. '' on line 332.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \kNearest with sig. '' on line 417.
+. Defining command \linLogisticRegression with sig. '' on line 433.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \naiveBayes with sig. '' on line 421.
+. Defining command \kNearest with sig. '' on line 437.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \optimalBayes with sig. '' on line 425.
+. Defining command \naiveBayes with sig. '' on line 441.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \discussion with sig. '' on line 429.
+. Defining command \optimalBayes with sig. '' on line 445.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \discussion with sig. '' on line 449.
 .................................................
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.aux")
 \openout1 = `classifiers.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 431.
-LaTeX Font Info:    ... okay on input line 431.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 451.
+LaTeX Font Info:    ... okay on input line 451.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -663,18 +700,18 @@ LaTeX Font Info:    ... okay on input line 431.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 431.
+Package hyperref Info: Link coloring ON on input line 451.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count162
+\c@section@level=\count167
 )
-LaTeX Info: Redefining \ref on input line 431.
-LaTeX Info: Redefining \pageref on input line 431.
-LaTeX Info: Redefining \nameref on input line 431.
+LaTeX Info: Redefining \ref on input line 451.
+LaTeX Info: Redefining \pageref on input line 451.
+LaTeX Info: Redefining \nameref on input line 451.
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.out")
@@ -687,7 +724,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: floatrow package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count163
+\c@lstlisting=\count168
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -755,45 +792,48 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 432.
+(hyperref)                than one, level fixed on input line 452.
 
 [1]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 432.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 452.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 432.
+nput line 452.
 
 (../python/3_linear.py [2])
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 432.
+Package tabulary Warning: No suitable columns! on input line 452.
 
-(../python/4_quadratic.py [3] [4])
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 452.
+
+[3] (../python/4_quadratic.py [4])
 Missing character: There is no “ in font cmr10!
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 432.
+(hyperref)                than one, level fixed on input line 452.
 
 [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 453.
  [7] [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 453.
 
 ("/mnt/CE6C52926C527565/Users/clint/Google Drive/School/Classes/Neural Networks
 /dev/classifiers/report/build/classifiers.aux")
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 433.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 433.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 453.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 453.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 453.
  ) 
 Here is how much of TeX's memory you used:
- 21580 strings out of 430306
- 358557 string characters out of 3188937
- 629875 words of memory out of 3000000
- 24726 multiletter control sequences out of 15000+200000
+ 21747 strings out of 430306
+ 360334 string characters out of 3188937
+ 615992 words of memory out of 3000000
+ 24885 multiletter control sequences out of 15000+200000
  8846 words of font info for 32 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,12n,45p,10425b,1908s stack positions out of 5000i,500n,10000p,200000b,50000s

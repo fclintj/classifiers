@@ -1,6 +1,6 @@
 # Clint Ferrin
 # Mon Sep 25, 2017
-# Bayes Naive Classifier 
+# Bayes Optimal Classifier
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -39,10 +39,6 @@ def gendata2(class_type,N):
         x = np.c_[x, [[m[0]],[m[1]]] + np.random.randn(2,1)/np.sqrt(5)]
     return x 
 
-def gen_test_df(num0,num1):
-
-    return data_frame
-
 def get_parzen(data,pts,lam):
     x = np.linspace(min(data)-3*lam,max(data)+3*lam, pts)
     kernel = np.empty([data.size,pts])
@@ -79,36 +75,39 @@ def run_bayes_test(data_tot,linspace,parzen):
 
     return y_hat
 
-def plot_data(x0,x1):
+def plotData(data):
     fig = plt.figure() # make handle to save plot 
-    plt.scatter(x0[0,:],x0[1,:],c='red',label='$x_0$')
-    plt.scatter(x1[0,:],x1[1,:],c='blue',label='$x_1$')
+    plt.scatter(data.x0[0,:],data.x0[1,:],c='red',label='$x_0$')
+    plt.scatter(data.x1[0,:],data.x1[1,:],c='blue',label='$x_1$')
     plt.xlabel('X Coordinate') 
     plt.ylabel('Y Coordinate') 
     plt.legend()
-
 
 data = np.loadtxt("../data/classasgntrain1.dat",dtype=float)
 x0 = data[:,0:2].T
 x1 = data[:,2:4].T
 data = data_frame(x0,x1)
 
-pts = [data.N0,data.N1]
+m0 = np.array(
+     [[-0.132,0.320,1.672,2.230,1.217,-0.819,3.629,0.8210,1.808, 0.1700],
+      [-0.711,-1.726,0.139,1.151,-0.373,-1.573,-0.243,-0.5220,-0.511,0.5330]]).T
+
+m1 = np.array(
+      [[-1.169,0.813,-0.859,-0.608,-0.832,2.015,0.173,1.432,0.743,1.0328],
+      [ 2.065,2.441,0.247,1.806,1.286,0.928,1.923,0.1299,1.847,-0.052]]).T
+
+pts = [m0.shape[0],m1.shape[0]]
 lam = 0.8
 
-linspace0,parzen0 = class_parzen(data.x0,pts,lam)
-linspace1,parzen1 = class_parzen(data.x1,pts,lam)
+linspace0,parzen0 = class_parzen(m0.T,pts,lam)
+linspace1,parzen1 = class_parzen(m1.T,pts,lam)
 
-plt.plot(linspace0[0],parzen0[0],label='Class0 X PDF')
-plt.plot(linspace0[1],parzen0[1],label='Class0 Y PDF')
-plt.legend()
 
-print(np.array(parzen0).shape)
 
 linspace = np.array([linspace0,linspace1])
 parzen = np.array([parzen0,parzen1])
 
-y = np.r_[np.zeros([data.N1,1]),np.ones([data.N0,1])] 
+y = np.r_[np.zeros([data.N0,1]),np.ones([data.N1,1])] 
 y_hat = run_bayes_test(data.xtot,linspace,parzen)
 
 num_err = sum(abs(y_hat - y))
@@ -139,7 +138,7 @@ for x in xp1:
         else:
             red_pts = np.c_[red_pts,[x,y]]
 
-plot_data(x0,x1)
+plotData(data)
 plt.scatter(blue_pts[0,:],blue_pts[1,:],color='blue',s=0.25)
 plt.scatter(red_pts[0,:],red_pts[1,:],color='red',s=0.25)
 plt.xlim(data.xlim)

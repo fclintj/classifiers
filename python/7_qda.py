@@ -1,3 +1,6 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Quadratic Discriminant Analysis 
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -93,7 +96,7 @@ mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],
 
 fig = plt.figure() # make handle to save plot 
 plt.scatter(x0[0,:],x0[1,:],c='red',label='$x_0$')
-plt.scatter(x1[0,:],x1[1,:],c='blue',label='$y_0$')
+plt.scatter(x1[0,:],x1[1,:],c='blue',label='$x_1$')
 plt.xlabel('X Coordinate') 
 plt.ylabel('Y Coordinate') 
 plt.legend()
@@ -115,7 +118,7 @@ xtest1 = gendata2(1,Ntest1)
 del_l,num_err = getDel(xtest0,xtest1,Rhat)
 print(num_err)
 
-print("Percent errors: %.2f"%(float(num_err)/(Ntest0 + Ntest1)))
+print("Percent errors: %.4f"%(float(num_err)/(Ntest0 + Ntest1)))
 
 # find max and min of sets
 x_tot = np.r_[x0[0,:],x1[0,:]]

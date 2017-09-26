@@ -1,3 +1,7 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Logistic Regression
+
 import sys 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,10 +17,10 @@ class data_frame:
         self.xlim = [np.min(self.xtot[0,:]),np.max(self.xtot[0,:])]
         self.ylim = [np.min(self.xtot[1,:]),np.max(self.xtot[1,:])]
 
-def plotData(data):
+def plot_data(data):
     fig = plt.figure() # make handle to save plot 
     plt.scatter(data.x0[0,:],data.x0[1,:],c='red',label='$x_0$')
-    plt.scatter(data.x1[0,:],data.x1[1,:],c='blue',label='$y_0$')
+    plt.scatter(data.x1[0,:],data.x1[1,:],c='blue',label='$x_1$')
     plt.xlabel('X Coordinate') 
     plt.ylabel('Y Coordinate') 
     plt.legend()
@@ -59,11 +63,10 @@ for i in range(500):
     phat = get_phat(data,X,beta)
     Xhat = X*phat
     beta = beta + np.dot(np.dot(np.linalg.inv(np.dot(X.T,Xhat)),X.T),(y-phat))
-    print(beta)
 
 phat_hard = phat > 0.5
 num_err = (sum(abs(phat_hard - y)))
-print("Percent of errors: %.2f"%(float(num_err)/data.N))
+print("Percent of errors: %.4f"%(float(num_err)/data.N))
 
 Ntest0 = 10000; 
 Ntest1 = 10000;
@@ -101,10 +104,9 @@ for x in xp1:
         else:
             red_pts = np.c_[red_pts,[x,y]]
 
-plotData(data)
+plot_data(data)
 plt.scatter(green_pts[0,:],green_pts[1,:],color='blue',s=0.25)
 plt.scatter(red_pts[0,:],red_pts[1,:],color='red',s=0.25)
 plt.xlim(data.xlim)
 plt.ylim(data.ylim)
 plt.show()
-

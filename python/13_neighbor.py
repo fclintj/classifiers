@@ -1,3 +1,7 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# K Nearest Neighbor 
+
 import sys 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -63,7 +67,7 @@ def find_class(dist_mat,k):
 
 data = np.loadtxt("../data/classasgntrain1.dat",dtype=float)
 data = data_frame(data)
-k = 1
+k = 5 
 y = np.r_[np.zeros([data.N0,1]),np.ones([data.N1,1])] 
 X = np.c_[data.xtot,y] 
 yhat = np.empty([data.N,1])
@@ -73,7 +77,7 @@ for i in range(data.N):
     yhat[i] = find_class(dist_mat,k)
     
 num_err = (sum(abs(yhat - y)))
-print("Percent of errors: %.2f"%(float(num_err)/data.N))
+print("Percent of errors: %.4f"%(float(num_err)/data.N))
 
 Ntest0 = 10000; 
 Ntest1 = 10000;
@@ -96,7 +100,7 @@ for i in range(Ntest1):
 
 print("Number of errors: %d"%(num_err))
 err_rate_linregress_test = float(num_err) / (Ntest0 + Ntest1);
-print("Percent of errors: %.3f"%(err_rate_linregress_test))
+print("Percent of errors: %.4f"%(err_rate_linregress_test))
 
 # create colored graph above/below line
 xp1 = np.linspace(data.xlim[0],data.xlim[1], num=100)
@@ -120,5 +124,3 @@ plt.scatter(red_pts[0,:],red_pts[1,:],color='red',s=0.25)
 plt.xlim(data.xlim)
 plt.ylim(data.ylim)
 plt.show()
-
-

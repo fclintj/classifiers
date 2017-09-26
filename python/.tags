@@ -56,14 +56,20 @@ Yhathard	classifiers.py	/^Yhathard = Yhat > 0.5    $/;"	v
 __init__	11_log_regression.py	/^    def __init__(self, data):$/;"	m	class:data_frame
 __init__	13_neighbor.py	/^    def __init__(self, data):$/;"	m	class:data_frame
 __init__	15_naive_bayes_applied.py	/^    def __init__(self, data0, data1):$/;"	m	class:data_frame
+__init__	16_optimal_bayes.py	/^    def __init__(self, data0, data1):$/;"	m	class:data_frame
 beta	11_log_regression.py	/^    beta = beta + np.dot(np.dot(np.linalg.inv(np.dot(X.T,Xhat)),X.T),(y-phat))$/;"	v
 beta	11_log_regression.py	/^beta = np.zeros([3,1])$/;"	v
 blue_pts	13_neighbor.py	/^            blue_pts = np.c_[blue_pts,[x,y]]$/;"	v
 blue_pts	13_neighbor.py	/^blue_pts= np.array([[],[]])$/;"	v
+blue_pts	15_naive_bayes_applied.py	/^            blue_pts = np.c_[blue_pts,[x,y]]$/;"	v
+blue_pts	15_naive_bayes_applied.py	/^blue_pts= np.array([[],[]])$/;"	v
+blue_pts	16_optimal_bayes.py	/^            blue_pts = np.c_[blue_pts,[x,y]]$/;"	v
+blue_pts	16_optimal_bayes.py	/^blue_pts= np.array([[],[]])$/;"	v
 calcDel	6_lda.py	/^def calcDel(data,Rhat,mu,N0,N):$/;"	f
 calcDelQDA	7_qda.py	/^def calcDelQDA(data,Rhat,mu,N0,N):$/;"	f
 cdf	14_naive_bayes.py	/^cdf = np.cumsum(pdf)\/sum(pdf)$/;"	v
 class_parzen	15_naive_bayes_applied.py	/^def class_parzen(data0,pts,lam):$/;"	f
+class_parzen	16_optimal_bayes.py	/^def class_parzen(data0,pts,lam):$/;"	f
 class_type	13_neighbor.py	/^        class_type = find_class(dist_mat,k)$/;"	v
 class_type	13_neighbor.py	/^    class_type = find_class(dist_mat,k)$/;"	v
 data	11_log_regression.py	/^data = data_frame(data)$/;"	v
@@ -72,6 +78,8 @@ data	13_neighbor.py	/^data = data_frame(data)$/;"	v
 data	13_neighbor.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	15_naive_bayes_applied.py	/^data = data_frame(x0,x1)$/;"	v
 data	15_naive_bayes_applied.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
+data	16_optimal_bayes.py	/^data = data_frame(x0,x1)$/;"	v
+data	16_optimal_bayes.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	3_linear.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	4_quadratic.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
 data	6_lda.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=float)$/;"	v
@@ -80,6 +88,7 @@ data	classifiers.py	/^data = np.loadtxt("..\/data\/classasgntrain1.dat",dtype=fl
 data_frame	11_log_regression.py	/^class data_frame:$/;"	c
 data_frame	13_neighbor.py	/^class data_frame:$/;"	c
 data_frame	15_naive_bayes_applied.py	/^class data_frame:$/;"	c
+data_frame	16_optimal_bayes.py	/^class data_frame:$/;"	c
 data_tot	3_linear.py	/^data_tot = np.c_[x0,x1]$/;"	v
 data_tot	4_quadratic.py	/^data_tot = np.c_[x0,x1]$/;"	v
 data_tot	classifiers.py	/^data_tot = np.c_[x0,x1]$/;"	v
@@ -108,6 +117,7 @@ gen_test_df	15_naive_bayes_applied.py	/^def gen_test_df(num0,num1):$/;"	f
 gendata2	11_log_regression.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	13_neighbor.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	15_naive_bayes_applied.py	/^def gendata2(class_type,N):$/;"	f
+gendata2	16_optimal_bayes.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	3_linear.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	4_quadratic.py	/^def gendata2(class_type,N):$/;"	f
 gendata2	6_lda.py	/^def gendata2(class_type,N):$/;"	f
@@ -119,11 +129,10 @@ getRhat	6_lda.py	/^def getRhat(x0,x1):$/;"	f
 getRhat	7_qda.py	/^def getRhat(x0,x1):$/;"	f
 get_distance_matrix	13_neighbor.py	/^def get_distance_matrix(X,point):$/;"	f
 get_parzen	15_naive_bayes_applied.py	/^def get_parzen(data,pts,lam):$/;"	f
+get_parzen	16_optimal_bayes.py	/^def get_parzen(data,pts,lam):$/;"	f
 get_phat	11_log_regression.py	/^def get_phat(data,X,beta):$/;"	f
 green_pts	11_log_regression.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	11_log_regression.py	/^green_pts= np.array([[],[]])$/;"	v
-green_pts	15_naive_bayes_applied.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
-green_pts	15_naive_bayes_applied.py	/^green_pts= np.array([[],[]])$/;"	v
 green_pts	3_linear.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	3_linear.py	/^green_pts= np.array([[],[]])$/;"	v
 green_pts	4_quadratic.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
@@ -134,12 +143,16 @@ green_pts	7_qda.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	7_qda.py	/^green_pts= np.array([[],[]])$/;"	v
 green_pts	classifiers.py	/^            green_pts = np.c_[green_pts,[x,y]]$/;"	v
 green_pts	classifiers.py	/^green_pts= np.array([[],[]])$/;"	v
-k	13_neighbor.py	/^k = 1$/;"	v
+k	13_neighbor.py	/^k = 5 $/;"	v
 kernel	14_naive_bayes.py	/^kernel = np.empty([emperical.shape[0],pts])$/;"	v
 lam	14_naive_bayes.py	/^lam = 0.8$/;"	v
 lam	15_naive_bayes_applied.py	/^lam = 0.8$/;"	v
+lam	16_optimal_bayes.py	/^lam = 0.8$/;"	v
 linregres	classifiers.py	/^def linregres(x0,x1):$/;"	f
 linspace	15_naive_bayes_applied.py	/^linspace = np.array([linspace0,linspace1])$/;"	v
+linspace	16_optimal_bayes.py	/^linspace = np.array([linspace0,linspace1])$/;"	v
+m0	16_optimal_bayes.py	/^m0 = np.array($/;"	v
+m1	16_optimal_bayes.py	/^m1 = np.array($/;"	v
 mu	6_lda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
 mu	7_qda.py	/^mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],$/;"	v
 mu_0	14_naive_bayes.py	/^mu_0 = 5$/;"	v
@@ -150,6 +163,7 @@ num_err	13_neighbor.py	/^        num_err = num_err + 1$/;"	v
 num_err	13_neighbor.py	/^num_err = (sum(abs(yhat - y)))$/;"	v
 num_err	13_neighbor.py	/^num_err = 0$/;"	v
 num_err	15_naive_bayes_applied.py	/^num_err = sum(abs(y_hat - y))$/;"	v
+num_err	16_optimal_bayes.py	/^num_err = sum(abs(y_hat - y))$/;"	v
 num_err	3_linear.py	/^        num_err = num_err + 1;$/;"	v
 num_err	3_linear.py	/^num_err = 0;$/;"	v
 num_err	3_linear.py	/^num_err = sum(sum(abs(Yhathard - Y)))\/2$/;"	v
@@ -163,26 +177,35 @@ p_0	14_naive_bayes.py	/^p_0 = 0.8$/;"	v
 p_1	14_naive_bayes.py	/^p_1 = 0.2$/;"	v
 parzen	14_naive_bayes.py	/^parzen = np.empty(100)$/;"	v
 parzen	15_naive_bayes_applied.py	/^parzen = np.array([parzen0,parzen1])$/;"	v
+parzen	16_optimal_bayes.py	/^parzen = np.array([parzen0,parzen1])$/;"	v
 pdf	14_naive_bayes.py	/^pdf = p_0*mlab.normpdf(x, mu_0, sig_0)+p_1*mlab.normpdf(x, mu_1, sig_1)$/;"	v
 phat	11_log_regression.py	/^    phat = get_phat(data,X,beta)$/;"	v
 phat_hard	11_log_regression.py	/^phat_hard = phat > 0.5$/;"	v
-plotData	11_log_regression.py	/^def plotData(data):$/;"	f
+plotData	16_optimal_bayes.py	/^def plotData(data):$/;"	f
 plotData	3_linear.py	/^def plotData(x0,x1):$/;"	f
+plot_data	11_log_regression.py	/^def plot_data(data):$/;"	f
 plot_data	13_neighbor.py	/^def plot_data(data):$/;"	f
+plot_data	15_naive_bayes_applied.py	/^def plot_data(x0,x1):$/;"	f
 prob	11_log_regression.py	/^        prob = np.dot(beta.T,np.r_[1,x,y])$/;"	v
 prob	11_log_regression.py	/^    prob = np.dot(beta.T,np.r_[1,xtest0[:,i]]) $/;"	v
 prob	11_log_regression.py	/^    prob = np.dot(beta.T,np.r_[1,xtest1[:,i]]) $/;"	v
 prob0	15_naive_bayes_applied.py	/^        prob0 = prob2d([x,y],linspace[0],parzen[0])$/;"	v
+prob0	16_optimal_bayes.py	/^        prob0 = prob2d([x,y],linspace[0],parzen[0])$/;"	v
 prob1	15_naive_bayes_applied.py	/^        prob1 = prob2d([x,y],linspace[1],parzen[0])$/;"	v
+prob1	16_optimal_bayes.py	/^        prob1 = prob2d([x,y],linspace[1],parzen[0])$/;"	v
 prob2d	15_naive_bayes_applied.py	/^def prob2d(point,linspace0,parzen0):$/;"	f
+prob2d	16_optimal_bayes.py	/^def prob2d(point,linspace0,parzen0):$/;"	f
 pts	14_naive_bayes.py	/^pts = 100$/;"	v
-pts	15_naive_bayes_applied.py	/^pts = 100$/;"	v
+pts	15_naive_bayes_applied.py	/^pts = [data.N0,data.N1]$/;"	v
+pts	16_optimal_bayes.py	/^pts = [m0.shape[0],m1.shape[0]]$/;"	v
 red_pts	11_log_regression.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	11_log_regression.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	13_neighbor.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	13_neighbor.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	15_naive_bayes_applied.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	15_naive_bayes_applied.py	/^red_pts = np.array([[],[]])$/;"	v
+red_pts	16_optimal_bayes.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
+red_pts	16_optimal_bayes.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	3_linear.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	3_linear.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	4_quadratic.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
@@ -194,17 +217,21 @@ red_pts	7_qda.py	/^red_pts = np.array([[],[]])$/;"	v
 red_pts	classifiers.py	/^            red_pts = np.c_[red_pts,[x,y]]$/;"	v
 red_pts	classifiers.py	/^red_pts = np.array([[],[]])$/;"	v
 run_bayes_test	15_naive_bayes_applied.py	/^def run_bayes_test(data_tot,linspace,parzen):$/;"	f
+run_bayes_test	16_optimal_bayes.py	/^def run_bayes_test(data_tot,linspace,parzen):$/;"	f
 sig_0	14_naive_bayes.py	/^sig_0 = 1$/;"	v
 sig_1	14_naive_bayes.py	/^sig_1 = 1$/;"	v
 test_data	15_naive_bayes_applied.py	/^test_data = data_frame(xtest0,xtest1)$/;"	v
+test_data	16_optimal_bayes.py	/^test_data = data_frame(xtest0,xtest1)$/;"	v
 x	14_naive_bayes.py	/^x = np.linspace(0,14, pts)$/;"	v
 x0	15_naive_bayes_applied.py	/^x0 = data[:,0:2].T$/;"	v
+x0	16_optimal_bayes.py	/^x0 = data[:,0:2].T$/;"	v
 x0	3_linear.py	/^x0 = data[:,0:2].T$/;"	v
 x0	4_quadratic.py	/^x0 = data[:,0:2].T$/;"	v
 x0	6_lda.py	/^x0 = data[:,0:2].T$/;"	v
 x0	7_qda.py	/^x0 = data[:,0:2].T$/;"	v
 x0	classifiers.py	/^x0 = data[:,0:2].T$/;"	v
 x1	15_naive_bayes_applied.py	/^x1 = data[:,2:4].T$/;"	v
+x1	16_optimal_bayes.py	/^x1 = data[:,2:4].T$/;"	v
 x1	3_linear.py	/^x1 = data[:,2:4].T$/;"	v
 x1	4_quadratic.py	/^x1 = data[:,2:4].T$/;"	v
 x1	6_lda.py	/^x1 = data[:,2:4].T$/;"	v
@@ -225,6 +252,7 @@ xlim	classifiers.py	/^xlim = [np.min(x_tot),np.max(x_tot)]$/;"	v
 xp1	11_log_regression.py	/^xp1 = np.linspace(data.xlim[0],data.xlim[1], num=100)$/;"	v
 xp1	13_neighbor.py	/^xp1 = np.linspace(data.xlim[0],data.xlim[1], num=100)$/;"	v
 xp1	15_naive_bayes_applied.py	/^xp1 = np.linspace(data.xlim[0],data.xlim[1], num=100)$/;"	v
+xp1	16_optimal_bayes.py	/^xp1 = np.linspace(data.xlim[0],data.xlim[1], num=100)$/;"	v
 xp1	3_linear.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
 xp1	4_quadratic.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
 xp1	6_lda.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
@@ -233,6 +261,7 @@ xp1	classifiers.py	/^xp1 = np.linspace(xlim[0],xlim[1], num=100)$/;"	v
 xtest0	11_log_regression.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
 xtest0	13_neighbor.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
 xtest0	15_naive_bayes_applied.py	/^xtest0 = gendata2(0,10000)$/;"	v
+xtest0	16_optimal_bayes.py	/^xtest0 = gendata2(0,10000)$/;"	v
 xtest0	3_linear.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
 xtest0	4_quadratic.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
 xtest0	6_lda.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
@@ -241,6 +270,7 @@ xtest0	classifiers.py	/^xtest0 = gendata2(0,Ntest0)$/;"	v
 xtest1	11_log_regression.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
 xtest1	13_neighbor.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
 xtest1	15_naive_bayes_applied.py	/^xtest1 = gendata2(1,10000) $/;"	v
+xtest1	16_optimal_bayes.py	/^xtest1 = gendata2(1,10000) $/;"	v
 xtest1	3_linear.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
 xtest1	4_quadratic.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
 xtest1	6_lda.py	/^xtest1 = gendata2(1,Ntest1) $/;"	v
@@ -250,10 +280,14 @@ y	11_log_regression.py	/^y = np.r_[np.ones([data.N0,1]),np.zeros([data.N1,1])] $
 y	13_neighbor.py	/^y = np.r_[np.zeros([data.N0,1]),np.ones([data.N1,1])] $/;"	v
 y	15_naive_bayes_applied.py	/^y = np.r_[np.zeros([data.N1,1]),np.ones([data.N0,1])] $/;"	v
 y	15_naive_bayes_applied.py	/^y = np.r_[np.zeros([test_data.N1,1]),np.ones([test_data.N0,1])] $/;"	v
+y	16_optimal_bayes.py	/^y = np.r_[np.zeros([data.N0,1]),np.ones([data.N1,1])] $/;"	v
+y	16_optimal_bayes.py	/^y = np.r_[np.zeros([test_data.N1,1]),np.ones([test_data.N0,1])] $/;"	v
 y_cor_lin	3_linear.py	/^y_cor_lin = [$/;"	v
 y_cor_lin	classifiers.py	/^y_cor_lin = [$/;"	v
 y_hat	15_naive_bayes_applied.py	/^y_hat = run_bayes_test(data.xtot,linspace,parzen)$/;"	v
 y_hat	15_naive_bayes_applied.py	/^y_hat = run_bayes_test(test_data.xtot,linspace,parzen)$/;"	v
+y_hat	16_optimal_bayes.py	/^y_hat = run_bayes_test(data.xtot,linspace,parzen)$/;"	v
+y_hat	16_optimal_bayes.py	/^y_hat = run_bayes_test(test_data.xtot,linspace,parzen)$/;"	v
 y_tot	3_linear.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
 y_tot	4_quadratic.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
 y_tot	6_lda.py	/^y_tot = np.r_[x0[1,:],x1[1,:]]$/;"	v
@@ -277,6 +311,7 @@ ylim	classifiers.py	/^ylim = [np.min(y_tot),np.max(y_tot)]$/;"	v
 yp1	11_log_regression.py	/^yp1 = np.linspace(data.ylim[0],data.ylim[1], num=100) $/;"	v
 yp1	13_neighbor.py	/^yp1 = np.linspace(data.ylim[0],data.ylim[1], num=100) $/;"	v
 yp1	15_naive_bayes_applied.py	/^yp1 = np.linspace(data.ylim[0],data.ylim[1], num=100) $/;"	v
+yp1	16_optimal_bayes.py	/^yp1 = np.linspace(data.ylim[0],data.ylim[1], num=100) $/;"	v
 yp1	3_linear.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
 yp1	4_quadratic.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v
 yp1	6_lda.py	/^yp1 = np.linspace(ylim[0],ylim[1], num=100) $/;"	v

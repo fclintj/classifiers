@@ -1,3 +1,7 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Quadratic Classifier
+
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -54,12 +58,12 @@ Yhat = np.dot(X,Bhat)
 Yhathard = Yhat > 0.5    
 
 num_err = sum(sum(abs(Yhathard - Y)))/2
-print("Number of errors: %d"%(num_err))
 
 Ntest0 = 10000; 
 Ntest1 = 10000;
 
 err_rate_linregress_train = float(num_err) / N
+
 print(err_rate_linregress_train)
 # generate the test data for class O
 xtest0 = gendata2(0,Ntest0)

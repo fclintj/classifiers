@@ -1,8 +1,10 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Parzen Density Estimate
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
-import matplotlib.ticker as ticker
-import math
 
 p_0 = 0.8
 p_1 = 0.2
@@ -49,12 +51,12 @@ ax[1].set_xlim(0,14)
 kernel = np.empty([emperical.shape[0],pts])
 for i in range(emperical.shape[0]):
     kernel[i] = mlab.normpdf(x, emperical[i], lam)
-    ax[2].plot(x,kernel[i],color='b')
+    ax[2].plot(x,kernel[i],color='c')
 
 parzen = np.empty(100)
 for i in range(pts):
     parzen[i] = sum(kernel[:,i])/pts
 
-ax[3].plot(x,parzen)
+ax[3].plot(x,parzen,color='forestgreen')
 
 plt.show()

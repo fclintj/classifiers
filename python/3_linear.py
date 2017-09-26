@@ -1,3 +1,7 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Linear Classifier
+
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,7 +31,7 @@ def gendata2(class_type,N):
 def plotData(x0,x1):
     fig = plt.figure() # make handle to save plot 
     plt.scatter(x0[0,:],x0[1,:],c='red',label='$x_0$')
-    plt.scatter(x1[0,:],x1[1,:],c='blue',label='$y_0$')
+    plt.scatter(x1[0,:],x1[1,:],c='blue',label='$x_1$')
     plt.xlabel('X Coordinate') 
     plt.ylabel('Y Coordinate') 
     plt.legend()
@@ -63,7 +67,7 @@ Ntest0 = 10000;
 Ntest1 = 10000;
 
 err_rate_linregress_train = float(num_err) / N
-print("Percent of errors: %.2f"%(err_rate_linregress_train))
+print("Percent of errors: %.4f"%(err_rate_linregress_train))
 
 # generate the test data for class O
 xtest0 = gendata2(0,Ntest0)
@@ -82,7 +86,7 @@ for i in range(Ntest1):
 
 print("Number of errors: %d"%(num_err))
 err_rate_linregress_test = float(num_err) / (Ntest0 + Ntest1);
-print("Percent of errors: %.2f"%(err_rate_linregress_test))
+print("Percent of errors: %.4f"%(err_rate_linregress_test))
 
 
 # find max and min of sets

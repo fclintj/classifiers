@@ -1,3 +1,7 @@
+# Clint Ferrin
+# Mon Sep 25, 2017
+# Linear Discriminant Analysis 
+
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -85,10 +89,9 @@ N = N0 + N1
 mu = np.array([[np.mean(x0[0,:]),np.mean(x0[1,:])],
                [np.mean(x1[0,:]),np.mean(x1[1,:])]])
 
-
 fig = plt.figure() # make handle to save plot 
 plt.scatter(x0[0,:],x0[1,:],c='red',label='$x_0$')
-plt.scatter(x1[0,:],x1[1,:],c='blue',label='$y_0$')
+plt.scatter(x1[0,:],x1[1,:],c='blue',label='$x_1$')
 plt.xlabel('X Coordinate') 
 plt.ylabel('Y Coordinate') 
 plt.legend()
@@ -98,7 +101,7 @@ Rhat = getRhat(x0,x1)
 
 del_l,num_err = getDel(x0,x1,Rhat)
 print("Number of Errors: %d"%(num_err))
-print("Percent errors: %.2f"%(float(num_err)/N))
+print("Percent errors: %.4f"%(float(num_err)/N))
 Ntest0 = 10000; 
 Ntest1 = 10000;
 
@@ -111,7 +114,7 @@ del_l,num_err = getDel(xtest0,xtest1,Rhat)
 np.savetxt('output.out', del_l)
 
 print("Number of Errors: %d"%(num_err))
-print("Percent errors: %.2f"%(float(num_err)/(Ntest0 + Ntest1)))
+print("Percent errors: %.4f"%(float(num_err)/(Ntest0 + Ntest1)))
 
 # find max and min of sets
 x_tot = np.r_[x0[0,:],x1[0,:]]

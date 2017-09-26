@@ -1,6 +1,6 @@
 \title { Data-Driven Classifiers }
 \author{ Clint Ferrin     }
-\date  { Mon Sep 25, 2017 }
+\date  { Fri Sep 25, 2017 }
 \def\class { Neural Networks: ECE 5930 }
 \documentclass{article}\makeatletter
 
@@ -41,18 +41,20 @@
     \usepackage{titletoc}   % change Table of Contents settings
     \usepackage{caption}    % removes figure from LoF: \caption[]{}
     \usepackage{listings, lstautogobble} % includes ability to input code
-    \usepackage{color}
-    \usepackage{courier}
+    \usepackage{color}      % include colors for 
+    \usepackage{courier}    % courier font for listings
     \usepackage{etoolbox}
-    \usepackage{tabulary}		% columns size of their contents (on page)
+    \usepackage{tabulary}	% columns size of their contents (on page)
     \usepackage{booktabs}   % allows for \toprule in tables
-    \newfloatcommand{capbtabbox}{table}[][\FBwidth] % puts table in a box
     
     \definecolor{mygreen}{RGB}{28,172,0}	% custom defined colors
     \definecolor{mylilas}{RGB}{170,55,241}
     \definecolor{mymauve}{rgb}{0.58,0,0.82}
+    \definecolor{light-gray}{gray}{0.95} %the shade of grey that stack exchange uses
+
     \lstset {
         language=Python,
+        backgroundcolor = \color{light-gray},
         breaklines		= true,
         keywordstyle    = \color{blue},
         morekeywords    = [2]{1}, keywordstyle=[2]{\color{black}},
@@ -82,15 +84,8 @@
         \hspace{-0.5em}\hyperref[\link]{\Cref*{\link}} \hspace{-0.65em}
     }
 
-    \DeclareDocumentCommand{\newFigure}{m o o o} {
+    \DeclareDocumentCommand{\newFigure}{m m m m} {
         \edef\path{#1} \edef\figcaption{#2} \edef\size{#3}  
-        % add label to figure
-        \StrSubstitute{#1}{.pdf}{}[\temp]
-        \StrSubstitute{\temp}{.jpg}{}[\temp]
-        \StrSubstitute{\temp}{.png}{}[\temp]
-        \expandafter\StrSubstitute\expandafter{\temp}{-}{ }[\temp]
-        %\label{\temp} % label gets rid of type and -.
-        
         
         % add size if not present
         \IfNoValueTF{#3} { % if 2 and 3 are NULL
@@ -127,13 +122,17 @@
         % \patchcmd{\subsection}{\bfseries}{\normalsize}{}{}
         % \patchcmd{\subsection}{0.5em}{-0.5em}{}{}
         % \renewcommand{\thesubsection}{\normalsize\hspace{-1em}}
+
+        % makes subsection appear in-line
         \renewcommand\subsection{\@startsection{subsubsection}{4}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {-1.5ex \@plus -.2ex}% Formerly 1.5ex \@plus .2ex
                                      {\normalfont\normalsize\bfseries}}        \renewcommand{\thesubsection}{\hspace{-1em}}
-        \renewcommand{\thesection}{\hspace{-1em}}
-        \renewcommand{\partname}{}
-        \renewcommand{\thepart}{}
+
+        % turns off section numbers
+        % \renewcommand{\thesection}{\hspace{-1em}}
+        % \renewcommand{\partname}{}
+        % \renewcommand{\thepart}{}
 
         \newgeometry{left=1in,bottom=1in,right=1in,top=1in} % page dims
         \setlength\parindent{0pt}	% set no tab on new paragraphs
@@ -162,7 +161,7 @@
 
             \vspace{2.5cm}
                 \begin{center}
-                \includegraphics[width=0.45\textwidth]{media/title.png}\par
+                \includegraphics[width=0.45\textwidth]{media/title.pdf}\par
                     Figure: Linear Data Classifier
                 \end{center}
             \vspace{2.5cm}
@@ -220,6 +219,10 @@
 
     \DeclareDocumentCommand{\overview}{} {
         \section{Overview}
+        This Document answers 17 questions that walk through pattern recognition on binary static data. To view the problem set and description of several of these classifiers, visit \href{https://drive.google.com/open?id=0B5NW7S3txe5UTE0xSHJHNWxJbEE}{\underline{this link}} or navigate to the following website:
+        \texttt{https://drive.google.com/open?id=0B5NW7S3txe5UTE0xSHJHNWxJbEE}
+        
+        This document is not intended to be a comprehensive teaching document to describe each binary classifier, but rather aims to analyze the differences between them as discussed in \reff{sec:discussion}.
     } 
 
     \DeclareDocumentCommand{\linear}{} {
@@ -228,7 +231,7 @@
         $\beta  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{y}$.
             
 
-        To prove the previous statement, we will multiply the polynomial out, and find where the derivative equals zero to find the minimized $\beta$.
+        To prove the previous statement, we will multiply the polynomial out, and find where the derivative equals zero in order to minimize $\beta$.
         
 
         \begin{equation*}\begin{aligned}
@@ -251,7 +254,7 @@
 
         \subsection{Problem 2:} Show that if the norm of $\norm{\bm{Y} - \bm{X\hat{B}}}^2$ is the Frobenius norm, then that the $\bm{\hat{B}}$ minimizing the same is determined by $ \bm{\hat{B}}  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{Y}$ 
         
-        Given that the Frobenius Norm for real numbers is:
+        Given that the Frobenius Norm for a matrix with real numbers is:
         \begin{equation*}
             \sqrt{Tr(\bm{AA}^T)} 
         \end{equation*}
@@ -273,31 +276,16 @@
             \bm{\hat{B}}  = (\bm{X}^T \bm{X})^{-1}\bm{X}^T\bm{Y}
         \end{equation}
 
-        \newpage
+        Note that the trace could be removed from the equation because the result of the trace was zero, meaning that the sum of the trace was filled with all zeros.
+
         \subsection{Problem 3:}
         Re-write the function \texttt{gendat2.m} into Python.
         Using the 100 points of training data in \texttt{classasgntrain1.dat}, write \texttt{PYTHON} code to train the coefficient matrix $\hat{\beta}$.
 
+        The program produced the desired results and the outcome can be seen in \reff{fig:linear}. Note that the data is not completely linearly separable, and there were 29 errors on the wrong side of the line after it was drawn. The results of the outcome can be seen in \reff{tab:compare}.
+
+        \newFigure{./media/linear.pdf}{Linear Classifier}{0.65}{fig:linear}
         \lstinputlisting[language=Python]{../python/3_linear.py}
-
-
-        \begin{tabulary}{\linewidth}{rcc}	
-            & \multicolumn{2}{c}{Errors in \%}                        \\
-            \toprule % ---------------------------------------
-            Method				        &   Training   &  Test      \\ 
-            \toprule % ---------------------------------------
-            Linear Regression 		    &      14.0    &  20    \\
-            Quadratic Regression	    &      14.5    &  20    \\
-            Linear Discriminant Analysis&      15.0    &  20    \\
-            Quadratic Discriminant Analysis	&  14.5    &  20    \\
-            Logistic Regression     	&      14.0    &  20    \\
-            1-Nearest Neighbor	    	&      00.0    &  22    \\
-            5-Nearest Neighbor	    	&      12.0    &  20    \\
-            15-Nearest Neighbor         &      16.0    &  19    \\
-            Bayes Naive 	            &              &        \\
-            \bottomrule % ---------------------------------------
-        \end{tabulary}\label{} 
-
     } 
 
     \DeclareDocumentCommand{\quadratic}{} {
@@ -305,10 +293,13 @@
 
         \subsection{Problem 4:} For the data described in Problem 3, train the regression coefficient matrix $\hat{B}$. Determine the classification error rate on the training data and 10,000 points of test data (as before) and fill in the corresponding row of the results table. Plot the classification regions as before.
         
+        The program performed as expected, and the outcome graph can be seen in \reff{fig:quad}. Note that due to the data that appears mostly linearly separable, the line does not curve much. The results of the program can be seen in \reff{tab:compare}.
+        
+        \newFigure{./media/quad.pdf}{Quadratic Regression Graph}{0.64}{fig:quad}
         \lstinputlisting[language=Python]{../python/4_quadratic.py}
-
-
-         \subsection{Problem 5:} Show that (2) is true. In particular, make sure you understand what is meant by “up to a constant which does not depend on the class"
+        
+            
+        \subsection{Problem 5:} Show that $\text{log }P(\text{class} = k | X = x) =  \text{log}\hat{\pi}_k -\frac{1}{2}\text{log}|\hat{R}_k|-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)$ is true. In particular, make sure you understand what is meant by ``up to a constant which does not depend on the class"
 
           \begin{equation*}
               f_k(\bm{x}) = \frac{1}{(2\pi)^{d/2}|\hat{R}^{1/2}|}\text{exp}[-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)]
@@ -321,14 +312,31 @@
         \end{aligned}\end{equation*}
 
         Now taking the log of the equation gives us:
-        \begin{equation*}
+        \begin{equation}
             \text{log}\hat{\pi}_k -\frac{1}{2}\text{log}|\hat{R}_k|-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k)
-        \end{equation*}
+        \end{equation}
     }
 
 
     \DeclareDocumentCommand{\lqAnalysis}{} {
         \section{Linear and Quadratic Discriminant Analysis}
+        \subsection{Problem 6:} For the data set described in problem 3, build a LDA classifier. That is, train sample means for each class and population co-variance, and classify based on the linear discriminant functions in $\delta_k^l=\bm{x}^T\hat{R}^{-1}\hat{\bm{\mu}}_k - \frac{1}{2}\hat{\bm{\mu}}_k^T\hat{R}^{-1}\hat{\bm{\mu}}_k + \text{log}\pi_k$. Characterize the error rate on the training data and on 10,000 points of test data. Plot the classification regions as before.
+
+        The graph seen in \reff{fig:lda} shows the effectiveness of the linear discriminant analysis. The error rates and results for the LDA can be seen in \reff{tab:compare}, and the code for the classifier is seen following \reff{fig:qda}. 
+
+        \newFigure{./media/lda.pdf}{Linear Discriminant Analysis}{0.64}{fig:lda}
+
+        \subsection{Problem 7:} For the data set described in problem 3, build a QDA classifier. In this case, you will also need to build the class co-variance matrices. Classify based on the quadratic discriminant functions in the equation $\text{log}\hat{\pi}_k -\frac{1}{2}\text{log}|\hat{R}_k|-\frac{1}{2}(\bm{x}-\bm{\hat{\mu}}_k)^T\hat{R}_k^{-1}(\bm{x}-\hat{\bm{\mu}}_k) $. Characterize the error rate on the training data and on 10,000 points of test data. Plot the classification regions as before. Compare the decision boundaries between QDA and quadratic regression.
+
+        The plotted data for Problem 7 can be seen in \reff{fig:qda}. The co-variance matrix can be seen in the second code block below, and it is referenced to as \texttt{Rhat} in the code. The decision boundaries between the LDA and QDA are significantly different; the LDA has a linear shape almost exactly the same as the Linear Regression, whereas the QDA has a steep curve towards the class1 data as seen in \reff{fig:qda}. This curve can allow the classifier to be more sensitive to nonlinearities.
+
+        \newFigure{./media/qda.pdf}{Quadratic Discriminant Function Classifier}{0.65}{fig:qda}
+
+        \lstinputlisting[language=Python]{../python/6_lda.py}\label{code:lda}
+
+        \lstinputlisting[language=Python]{../python/7_qda.py}\label{code:qda}
+
+        
     }
 
     \DeclareDocumentCommand{\linLogisticRegression}{} {
@@ -338,11 +346,15 @@
             l(\beta)=\sum_{i=1}^N y_i \beta^T\bm{x}_i - log(1+e^{\beta^T\bm{x}_i})
         \end{equation*}
 
+        The following note was necessary to remove a negative sign from the leading term of the result.
+        
         Note:
         \begin{equation*}
             \frac{e^{\beta^T\bm{x}_i}}{1 + e^{\beta^T\bm{x}_i}} 
             = \frac{1}{1 + e^{-\beta^T\bm{x}_i}} 
         \end{equation*}
+        
+
         We begin with the equation:
         \begin{equation*}\begin{aligned}
             l(\beta) &= \sum_{i=1}^N y_i \text{ log }p(\bm{x}_i;\beta)
@@ -369,8 +381,11 @@
             &= \sum_{i=1}^N 
             y_i\beta^T\bm{x}_i
             -(\text{log}(e^{\beta^T\bm{x}_i}) + \text{log}({1+e^{-\beta^T\bm{x}_i}}))\\
-            &= \sum_{i=1}^N y_i\beta^T\bm{x}_i - \text{log}({1+e^{\beta^T\bm{x}_i}}))\\
         \end{aligned}\end{equation*}
+
+        \begin{equation}
+           l(\beta)  = \sum_{i=1}^N y_i\beta^T\bm{x}_i - \text{log}({1+e^{\beta^T\bm{x}_i}}))
+        \end{equation}
 
         \subsection{Problem 9:} Show that 
         \begin{equation*}
@@ -386,8 +401,11 @@
              &\sum_{i=1}^N y_i\bm{x}_i - \frac{\bm{x}_i e^{\beta^T\bm{x}_i}}
              {1+e^{\beta^T\bm{x}_i}}\\
              &\sum_{i=1}^N y_i\bm{x}_i - \bm{x}_i p(\bm{x}_i;\beta)\\
-             &\sum_{i=1}^N \bm{x}_i (y_i - p(\bm{x}_i;\beta) )
         \end{aligned}\end{equation*}
+
+        \begin{equation}
+             \sum_{i=1}^N \bm{x}_i (y_i - p(\bm{x}_i;\beta) )
+        \end{equation}
 
         \subsection{Problem 10:} Show that 
         \begin{equation*}
@@ -421,33 +439,120 @@
         \end{aligned}\end{equation*}
 
         So,
-        \begin{equation*}\begin{aligned}
+        \begin{equation}\begin{aligned}
             \sum_{i=1}^N 
             \frac{-\bm{x}_i e^{\beta^T\bm{x}_i}x^T}
             {(1+e^{\beta^T\bm{x}_i})^2} &= 
             \frac{-\bm{x}_i^T\bm{x}(1 - p(\bm{x}_i;\beta))} 
             {1+e^{\beta^T\bm{x}_i}}\\
             &=-\bm{x}_i^T\bm{x}\: p(\bm{x}_i;\beta) (1 - p(\bm{x}_i;\beta))
-        \end{aligned}\end{equation*}
+        \end{aligned}\end{equation}
          
     }
 
     \DeclareDocumentCommand{\kNearest}{} {
         \section{k-nearest Neighbor Classifier}
+        \subsection{Problem 13:} For the data set described in problem 3, program a k-nearest neighbor function. Make it so that you can change the value of k. Use your k-nearest neighbor function for classification of the training data and 10,000 points of test data for k = 1, k = 5, and k = 15. Comment on the probability of error on the training data when k = 1. Plot the classification regions. Record the probability of classification error for test and training data on the table.
+
+        As seen in the following code, the $k$ value can be easily manipulated to give the corresponding results seen in \reff{fig:k1} through \reff{fig:k15}. 
+
+        Table \ref{tab:nearest} shows how the nearest neighbor program reacts when k=1. The program overfits to the training data and reports ``0 Errors," but later has the highest error rate on the test data. 
+
+        The classification regions can be seen in \reff{fig:k1} through \reff{fig:k15}.
+
+        
+        \begin{table}[H]
+        \begin{tabulary}{\linewidth}{rccc}	
+            && \multicolumn{2}{c}                   {Errors in \%}      \\
+            \toprule % --------------------------------------------------
+                        Method	            & Run-time &    Training  &  Test     \\ 
+            \toprule % ---------------------------------------------------
+            1-Nearest Neighbor	    	    &  35.02s  &      00.0    &  21.83    \\
+            5-Nearest Neighbor	    	    &  37.92s  &      12.0    &  20.29    \\
+            15-Nearest Neighbor             &  36.47s  &      16.0    &  19.25    \\
+            \bottomrule % ------------------------------------------------
+            \end{tabulary}\caption{Nearest Neighbor Performance Comparison}\label{tab:nearest}\end{table} 
+
+        \newFigure{./media/1-nearest.pdf}{k=1 Nearest Neighbor}{0.45}{fig:k1}
+        \newFigure{./media/5-nearest.pdf}{k=5 Nearest Neighbor}{0.45}{fig:k5}
+        \newFigure{./media/15-nearest.pdf}{k=15 Nearest Neighbor}{0.45}{fig:k15}
+         
+        \lstinputlisting[language=Python]{../python/13_neighbor.py}
+         
     }
 
     \DeclareDocumentCommand{\naiveBayes}{} {
         \section{Naive Bayes Classifier}
+            \subsection{Problem 14:} The true density is a Gaussian mixture,$f_X(x) = p_0 N(x, \mu_0,\sigma_0^2) + p_1 N(x, \mu_1 , \sigma_1^2)$. Using this equation, with given values of $\mu$ and $sigma$, make a plot of the true density, the sample empirical distribution, the kernel functions, and the estimated density. Try different values of $\lambda$.
+
+            As seen in \reff{fig:parzen}, the Parzen distribution was calculated using an empirical distribution and adding the corresponding Gaussian distributions. The $\lambda$ of $\lambda=0.8$ was chosen for the best results. If $\lambda$ is too small, the data begins to look corrupt, and if it was much larger than $\lambda=0.8$, it became too peaked in the middle regions.
+
+
+            \newFigure{./media/parzen.pdf}{Calculating Parzen Distribution}{0.65}{fig:parzen}
+
+            \lstinputlisting[language=Python]{../python/14_naive_bayes.py}
+            
+
+            \subsection{Problem 15:} Using the training data in \texttt{classassgntrain1.dat} to estimate the densities, apply the Naive Bayes estimator to our data set. Plot the classification regions. Record the probability of classification error for test and training data on the table.
+
+
+            The data with the classification regions are plotted in \reff{fig:naive} and the code is typed out below the graph.
+            The probability of classification error for test and training data are recorded on \reff{tab:compare}.
+
+            To estimate the density functions, I simply found the probability that an x value would be chosen in \texttt{class0} and a y value in \texttt{class0}. Their pdf were calculated using the Parzen technique, and their distribution can be seen in \reff{fig:bayes1d}.
+
+            \newFigure{./media/bayes-1d-plot.pdf}{Bayes 1D plot of X and Y}{0.55}{fig:bayes1d}
+
+            Because the Bayes method assumes the probability is independent, the two can simply be multiplied together to create a probability that a given point is in class 0 or 1. \reff{fig:naive} shows how the division line ended up, and the classification error can be seen in \reff{tab:compare}.
+
+            \newFigure{./media/naive-bayes.pdf}{Naive Bayes Parzen Graph}{0.65}{fig:naive}
+            \lstinputlisting[language=Python]{../python/15_naive_bayes_applied.py}
     }
 
     \DeclareDocumentCommand{\optimalBayes}{} {
         \section{Optimal Bayes Classifier}
+        \subsection{Problem 16:} For the data set described in problem 3, determine the Bayes error rate on the training data and 10,000 points of test data. Record the probability of classification error for test and training data on the table. Plot the classification regions.
+
+        The classification regions for the Optimal Bayes Classifier can be seen in \reff{fig:optimal}. It performed the best on the test data above all other data sets because it had the actual data model embedded into the classifier. See \reff{tab:compare} for specific details.
+
+        \newFigure{./media/optimal-bayes.pdf}{Optimal Bayes Classifier}{0.65}{fig:optimal}
+
+        \lstinputlisting[language=Python]{../python/16_optimal_bayes.py}
+        
     }
 
     \DeclareDocumentCommand{\discussion}{} {
-        \section{Discussion}
-    }
+        \section{Discussion}\label{sec:discussion}
+        \subsection{Problem 17:} Discuss the relative merits of the different classification algorithms on this source of data. Comment on differences in performance between training and test data. Also, comment on operating speed of the classification algorithms (after they have been trained). Summarize what you have learned.  Turn in with this assignment your table of results, plots of data and classification regions, and listings of your \texttt{PYTHON} code.
+    
+        The highest performing data classifier was the Bayes Optimal classifier. In this case it was because we had the exact model of the data, but in real world examples, it is not feasible to have such a model.
 
+        The Linear regression model was similar in run-time to the optimal classifier, and it performed well, regardless of its seeming simplicity.
+
+        The 15-nearest neighbor performed as well as the Bayes Optimal classifier, but it took considerably longer. There exist ways to optimize the code, because I was comparing the distance of every point in the data set to the test point, which required a lot of wasted time. Regardless, one of the major drawbacks of the nearest neighbor, is that it takes a considerable amount of time to run through the algorithm.
+
+        
+
+        \begin{table}[H]
+        \begin{tabulary}{\linewidth}{rccc}	
+            && \multicolumn{2}{c}                   {Errors in \%}      \\
+            \toprule % --------------------------------------------------
+                        Method	            & Run-time &    Training  &  Test     \\ 
+            \toprule % ---------------------------------------------------
+            Linear Regression 		        &  1.23s   &      14.5    &  20.49    \\
+            Quadratic Regression	        &  1.70s   &      14.5    &  20.44    \\
+            Linear Discriminant Analysis    &  2.49s   &      15.0    &  19.98    \\
+            Quadratic Discriminant Analysis	&  3.26s   &      14.5    &  20.23    \\
+            Logistic Regression     	    &  2.00s   &      14.0    &  20.00    \\
+            1-Nearest Neighbor	    	    &  35.02s  &      00.0    &  21.83    \\
+            5-Nearest Neighbor	    	    &  37.92s  &      12.0    &  20.29    \\
+            15-Nearest Neighbor             &  36.47s  &      16.0    &  19.25    \\
+            Bayes Naive 	                &  1.22s   &      14.0    &  20.04    \\
+            Bayes Optimal Classifier        &  0.20s   &      14.0    &  19.14    \\
+            \bottomrule % ------------------------------------------------
+            \end{tabulary}\caption{Binary Classifier Performance Comparison}\label{tab:compare}  \end{table} 
+
+        }
 \begin{document}
     \main
 \end{document}

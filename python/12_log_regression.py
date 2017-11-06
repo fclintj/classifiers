@@ -59,7 +59,7 @@ y = np.r_[np.ones([data.N0,1]),np.zeros([data.N1,1])]
 X = np.r_[np.ones([1,data.xtot.shape[1]]), data.xtot].T 
 beta = np.zeros([3,1])
 
-for i in range(500):
+for i in range(10):
     phat = get_phat(data,X,beta)
     Xhat = X*phat
     beta = beta + np.dot(np.dot(np.linalg.inv(np.dot(X.T,Xhat)),X.T),(y-phat))

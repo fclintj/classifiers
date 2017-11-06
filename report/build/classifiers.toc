@@ -13,13 +13,15 @@
 \contentsline {subsubsection}{Problem 8:}{12}{section*.15}
 \contentsline {subsubsection}{Problem 9:}{13}{section*.16}
 \contentsline {subsubsection}{Problem 10:}{14}{section*.17}
-\contentsline {section}{\numberline {6}k-nearest Neighbor Classifier}{14}{section.6}
-\contentsline {subsubsection}{Problem 13:}{14}{section*.18}
-\contentsline {section}{\numberline {7}Naive Bayes Classifier}{18}{section.7}
-\contentsline {subsubsection}{Problem 14:}{18}{section*.23}
-\contentsline {subsubsection}{Problem 15:}{19}{section*.25}
-\contentsline {section}{\numberline {8}Optimal Bayes Classifier}{22}{section.8}
-\contentsline {subsubsection}{Problem 16:}{22}{section*.28}
-\contentsline {section}{\numberline {9}Discussion}{25}{section.9}
-\contentsline {subsubsection}{Problem 17:}{25}{section*.30}
+\contentsline {subsubsection}{Problem 11:}{14}{section*.18}
+\contentsline {subsubsection}{Problem 12:}{15}{section*.19}
+\contentsline {section}{\numberline {6}k-nearest Neighbor Classifier}{17}{section.6}
+\contentsline {subsubsection}{Problem 13:}{17}{section*.21}
+\contentsline {section}{\numberline {7}Naive Bayes Classifier}{20}{section.7}
+\contentsline {subsubsection}{Problem 14:}{20}{section*.25}
+\contentsline {subsubsection}{Problem 15:}{21}{section*.28}
+\contentsline {section}{\numberline {8}Optimal Bayes Classifier}{24}{section.8}
+\contentsline {subsubsection}{Problem 16:}{24}{section*.31}
+\contentsline {section}{\numberline {9}Discussion}{27}{section.9}
+\contentsline {subsubsection}{Problem 17:}{27}{section*.33}
 \contentsfinish 

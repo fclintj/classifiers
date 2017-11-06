@@ -13,7 +13,7 @@ mu_1 = 10
 sig_0 = 1
 sig_1 = 1
 
-lam = 0.8
+lam = .5 
 
 f, ax = plt.subplots(4,1)
 f.subplots_adjust(hspace=.5)
